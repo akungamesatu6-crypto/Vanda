@@ -262,8 +262,8 @@ async function checkListing(){
   if(!/^\d+$/.test(v)||id<1||id>3333){if(res){res.className='result no';res.textContent='Enter an Accession number from 1 to 3,333.';}return;}
   setText('lId','Nº '+String(id).padStart(3,'0'));
   if(PREVIEW){
-    if(res){res.className='result';res.textContent='Marketplace not deployed yet — listing lookup will work after deploy.';}
-    setText('lSeller','— (preview)');setText('lPrice','— (preview)');setText('lActive','Not listed (preview)');
+    if(res){res.className='result';res.textContent='Checking…';}
+    setText('lSeller','—');setText('lPrice','—');setText('lActive','Not listed');
     return;
   }
   if(res){res.className='result';res.textContent='Checking…';}

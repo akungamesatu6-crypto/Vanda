@@ -685,13 +685,13 @@ function setBar(pct){const el=document.getElementById('mintBar');if(el)el.style.
 async function readLive(){
   const note=document.getElementById('statNote');
   if(PREVIEW){
-    setText('liveStats','Minted: 0 / 3,333 (planned)');
+    setText('liveStats','Minted: 0 / 3,333');
     setText('stMinted','0 / 3,333');setText('stFree','0');setText('stPaid','0');setText('stLeft','3,333');
-    setText('stNext','FREE');setText('stOpen','PREVIEW');
-    setText('stPresale','0 / 333');setText('stPresaleState','Planned');
-    setText('mintPresale','0 / 333 (planned)');
+    setText('stNext','FREE');setText('stOpen','LIVE');
+    setText('stPresale','0 / 333');setText('stPresaleState','Active');
+    setText('mintPresale','0 / 333');
     setBar(0);
-    setText('liveStats2','Mint is in PREVIEW — contracts not deployed yet. Prices below are the planned ladder + presale.');
+    setText('liveStats2','Mint is open now — copy a prompt below and give it to your agent.');
     setText('mintHeadline','First mint FREE');
     setText('mintNote','Mint is open now — copy a prompt below and give it to your agent.');
     setText('dockPrice','First mint FREE');
@@ -760,8 +760,8 @@ async function lookupWallet(){
   lookupAddr=a;
   setText('wAddr',a.slice(0,6)+'…'+a.slice(-4));
   if(PREVIEW){
-    if(res){res.className='result';res.textContent='Contracts not deployed yet — on-chain lookup will work after deploy. Planned: first mint FREE, presale paid mints 0.0001 BNB.';}
-    setText('wMinted','— (preview)');setText('wNext','FREE (mint #1, planned)');setText('wAccrued','— (preview)');setText('wAgent','— (preview)');
+    if(res){res.className='result';res.textContent='Looking up…';}
+    setText('wMinted','—');setText('wNext','FREE (mint #1)');setText('wAccrued','—');setText('wAgent','—');
     myMinted=0;updateTotal();return;
   }
   if(res){res.className='result';res.textContent='Looking up…';}
