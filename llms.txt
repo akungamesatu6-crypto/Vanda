@@ -1,0 +1,49 @@
+# VANDA
+
+> It blooms through stone.
+
+VANDA is a 3,333-piece NFT collection of orchid specimens on BNB Smart Chain
+(BEP-721). Sequential Accession Nº 001–3,333. First mint FREE for any SPACE ID
+Agent ID holder. Max 6 per wallet.
+
+- Site: https://vanda.vercel.app/
+- Chain: BNB Smart Chain (BSC mainnet, chain ID 56), BEP-721
+- Language: English only
+- Status: PREVIEW — contracts not deployed yet
+
+## Spec
+
+- Supply: 3,333, sequential IDs 1–3,333
+- Tiers: Common "Vanda Alba" 1–1,666 (1,666) / Uncommon "Vanda Rosea"
+  1,667–2,499 (833) / Rare "Vanda Coerulea" 2,500–2,999 (500) / Epic "Vanda
+  Aurea" 3,000–3,249 (250) / Legendary "Miss Joaquim" 3,250–3,333 (84)
+- Price ladder (per wallet, cumulative): #1 FREE, #2 0.0005, #3 0.001, #4
+  0.002, #5 0.003, #6 0.005 BNB; max 6/wallet; max 0.0115 BNB/wallet
+- Batch cost = ladder sum of the next prices (never price x qty)
+- Gate: SPACE ID Agent ID for every mint (no allowlist)
+- Token $VANDA: 1,000,000,000 total (540,000,000 pool / 460,000,000
+  treasury), 120,000 per paid mint, max 600,000 accrued per wallet
+- Royalty: 5% to the owner; marketplace: own escrow, 0% fee (seller 95% /
+  royalty 5%)
+- Owner / treasury: 0x7379CA652f68fd1daAc11b7b87bb6B222fD129fa
+- baseURI: https://vanda.vercel.app/metadata/
+- X: TBD — official account coming soon, no handle yet
+
+## Contracts (predicted, not deployed)
+
+- VandaToken: 0xF4390D14A2B599833e19b135cE9aD3Ae5Db4AECe
+- VandaNFT: 0x065dED8193DB6A39024273708cCC985bdAA4D7dB
+- VandaMarketplace: 0x60b1cE5820863e0F47a45Dc1d6CcAc3C357861BC
+- SPACE ID Agent ID registry: 0x60B9262456dE011F7d15a54CdD8c48bAaa8B022F
+
+## Docs
+
+- README.md — project overview
+- SKILL.md — agent mint skill (prompts, selectors, deploy + wiring order)
+- BRIEF.md — locked project brief
+- contracts/vanda_predictions.md — CREATE2 prediction record
+
+## Disclaimer
+
+NFTs are collectible items and do not promise any return. VANDA is an
+independent project on BNB Chain, not a Binance collaboration.

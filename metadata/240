@@ -1,0 +1,19 @@
+{
+  "name": "VANDA \u2014 Accession N\u00ba 240",
+  "description": "Accession N\u00ba 240 \u2014 a Vanda Alba specimen from the VANDA collection: 3,333 orchids grown on BNB Smart Chain. It blooms through stone.",
+  "image": "https://vanda.vercel.app/assets/tier-common.jpg",
+  "attributes": [
+    {
+      "trait_type": "Tier",
+      "value": "Common"
+    },
+    {
+      "trait_type": "Variety",
+      "value": "Vanda Alba"
+    },
+    {
+      "trait_type": "Accession",
+      "value": "240"
+    }
+  ]
+}

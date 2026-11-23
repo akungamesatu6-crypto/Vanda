@@ -1,0 +1,80 @@
+# VANDA
+
+> It blooms through stone.
+
+VANDA is a 3,333-piece NFT collection of orchid specimens on BNB Smart Chain
+(BEP-721). Five varieties, sequential Accession Nº 001–3,333, first mint FREE
+for any SPACE ID Agent ID holder, max 6 per wallet.
+
+- Site: https://vanda.vercel.app/
+- Chain: BNB Smart Chain (BSC mainnet, chain ID 56)
+- Standard: BEP-721, sequential token IDs 1–3,333
+- Language: English only
+- Status: **PREVIEW — contracts not deployed yet**
+
+## At a glance
+
+| | |
+|---|---|
+| Supply | 3,333 |
+| Price ladder | #1 FREE · #2 0.0005 · #3 0.001 · #4 0.002 · #5 0.003 · #6 0.005 BNB |
+| Max per wallet | 6 (max 0.0115 BNB per wallet) |
+| Gate | SPACE ID Agent ID, every mint (no allowlist) |
+| Token | $VANDA — 1B total (540M pool / 460M treasury), 120,000 per paid mint, max 600,000/wallet |
+| Royalty | 5% to the owner |
+| Marketplace | Own escrow, 0% fee (seller 95% / royalty 5%) |
+| baseURI | https://vanda.vercel.app/metadata/ |
+
+## Rarity
+
+| Tier | Variety | Accession Nº | Count | Share |
+|---|---|---|---|---|
+| Common | Vanda Alba | 001–1,666 | 1,666 | 50.0% |
+| Uncommon | Vanda Rosea | 1,667–2,499 | 833 | 25.0% |
+| Rare | Vanda Coerulea | 2,500–2,999 | 500 | 15.0% |
+| Epic | Vanda Aurea | 3,000–3,249 | 250 | 7.5% |
+| Legendary | Miss Joaquim | 3,250–3,333 | 84 | 2.5% |
+
+IDs are sequential in mint order — the variety of a token follows its
+Accession number. The Legendary Miss Joaquim is the 1893 Singapore hybrid
+(Vanda hookeriana × Vanda teres), Singapore's national flower.
+
+## Contracts (PREDICTED — not deployed yet)
+
+| Contract | Predicted address |
+|---|---|
+| VandaToken ($VANDA) | 0xF4390D14A2B599833e19b135cE9aD3Ae5Db4AECe |
+| VandaNFT (VANDA) | 0x065dED8193DB6A39024273708cCC985bdAA4D7dB |
+| VandaMarketplace | 0x60b1cE5820863e0F47a45Dc1d6CcAc3C357861BC |
+
+Owner / treasury / royalty receiver:
+0x7379CA652f68fd1daAc11b7b87bb6B222fD129fa
+
+Deploy order: token → NFT → marketplace. Wiring: `setMinter(NFT)` once on the
+token, then `transferOwnership(new wallet)`. Mint opens at deploy. Full
+prediction record: `contracts/vanda_predictions.md`.
+
+## Minting (for agents)
+
+See `SKILL.md` for the full agent mint skill: free-mint and batch-mint
+prompts, selectors, and the ladder-sum rule (batch cost = sum of the next
+ladder prices, never price × qty).
+
+## X
+
+Official X account: **TBD — coming soon.** No handle exists yet.
+
+## Files
+
+- `index.html` — mint page (PREVIEW state: zero-address placeholders, mint disabled)
+- `SKILL.md` — agent mint skill
+- `llms.txt` — machine-readable summary
+- `BRIEF.md` — locked project brief
+- `assets/` — hero, emblem, 5 tier images
+- `metadata/` — 3,333 extensionless metadata files (IDs 1–3,333)
+- `contracts/` — Hardhat project, tests 37/37, CREATE2 predictions
+
+## Disclaimer
+
+NFTs are collectible items and do not promise any return. VANDA is an
+independent project on BNB Chain, not a Binance collaboration.
