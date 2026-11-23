@@ -34,10 +34,6 @@ section{padding:36px 20px;max-width:760px;margin:0 auto}
 section h2{font-family:Georgia,serif;font-size:30px;color:var(--text);margin:0 0 6px}
 section .kicker{color:var(--acc);font-size:12px;letter-spacing:3px;font-weight:800;text-transform:uppercase}
 section p.lede{color:var(--muted)}
-.status{background:var(--surface);border:1px solid var(--acc);border-radius:20px;padding:22px}
-.status .big{font-family:Georgia,serif;font-size:34px;margin:4px 0}
-.bar{height:12px;background:#0A0F0B;border:1px solid var(--line);border-radius:999px;overflow:hidden;margin:10px 0 6px}
-.bar i{display:block;height:100%;background:linear-gradient(90deg,var(--acc-dim),var(--acc));width:0%}
 .statgrid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}
 .statgrid div{background:#0A0F0B;border:1px solid var(--line);border-radius:12px;padding:10px 12px}
 .statgrid b{display:block;color:var(--acc);font-size:12px;letter-spacing:1px;text-transform:uppercase}
@@ -166,26 +162,7 @@ pre{white-space:pre-wrap;word-break:break-word;background:#0A0F0B;border:1px sol
 <p style="margin-top:16px;font-size:14px;color:var(--orchid);font-weight:700">Presale: the first 333 paid mints cost only 0.0001 BNB.</p>
 </div></div>
 
-<section id="status">
-<p class="kicker">Live status</p>
-<h2>The greenhouse, right now</h2>
-<div class="status">
-<p class="big" id="liveStats">Minted: 0 / 3,333 (planned)</p>
-<div class="bar"><i id="mintBar"></i></div>
-<p id="statNote" style="color:var(--orchid);margin:6px 0 0">PREVIEW — contracts not deployed yet. These are planned numbers, not on-chain values. Live stats will appear here once the contracts deploy.</p>
-<div class="presale"><b>Presale — first 333 paid mints at 0.0001 BNB.</b><br>Your first mint is always FREE, presale or not. The presale counts paid mints only, closes itself at 333, and needs no owner action and no allowlist. After it closes, paid mints follow the per-wallet ladder (0.0005 / 0.001 / 0.002 / 0.003 / 0.005 BNB).</div>
-<div class="statgrid">
-<div><b>Minted</b><span id="stMinted">0 / 3,333</span></div>
-<div><b>Free claimed</b><span id="stFree">0</span></div>
-<div><b>Paid sold</b><span id="stPaid">0</span></div>
-<div><b>Remaining</b><span id="stLeft">3,333</span></div>
-<div><b>Your next price</b><span id="stNext">FREE</span></div>
-<div><b>Status</b><span id="stOpen">PREVIEW</span></div>
-<div><b>Presale sold</b><span id="stPresale">0 / 333</span></div>
-<div><b>Presale</b><span id="stPresaleState">Planned</span></div>
-</div>
-</div>
-</section>
+
 
 <section id="how">
 <p class="kicker">How it works</p>
