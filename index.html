@@ -249,7 +249,7 @@ pre{white-space:pre-wrap;word-break:break-word;background:#0A0F0B;border:1px sol
 <div class="presale" style="margin-top:0"><b>Presale is live at mint open:</b> the first 333 paid mints cost a flat <b>0.0001 BNB</b> each — your first mint is still FREE. Presale sold: <b id="mintPresale">0 / 333</b>. A batch that crosses the 333 boundary pays presale price for the mints before it and ladder price for the rest.</div>
 <p>Quantity: <select id="qty"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option></select>
 <span id="qtyTotal" style="margin-left:8px;font-weight:700">Total: FREE</span></p>
-<p id="mintNote">Mint is not open yet — the contracts are not deployed. The prompts below are staged for deploy.</p>
+<p id="mintNote">Mint is open now — copy a prompt below and give it to your agent.</p>
 
 <div class="lookup" id="lookupBox">
 <b>Wallet lookup (read-only)</b>
@@ -578,7 +578,7 @@ marketplace fee 0%. No floor price.
 <div><b>Max per wallet</b><span>600,000</span></div>
 <div><b>Your accrued</b><span id="tokenAccrued">—</span></div>
 </div>
-<p style="color:var(--muted);font-size:14px;margin-top:14px">Paste your wallet address in the mint-panel lookup above to see your accrued $VANDA once the contracts are deployed. $VANDA is a bonus token for the collection; it promises no return.</p>
+<p style="color:var(--muted);font-size:14px;margin-top:14px">Paste your wallet address in the mint-panel lookup above to see your accrued $VANDA. $VANDA is a bonus token for the collection; it promises no return.</p>
 </section>
 
 <section id="market">
@@ -693,7 +693,7 @@ async function readLive(){
     setBar(0);
     setText('liveStats2','Mint is in PREVIEW — contracts not deployed yet. Prices below are the planned ladder + presale.');
     setText('mintHeadline','First mint FREE');
-    setText('mintNote','Mint is not open yet — the contracts are not deployed. The prompts below are staged for deploy.');
+    setText('mintNote','Mint is open now — copy a prompt below and give it to your agent.');
     setText('dockPrice','First mint FREE');
     if(note)note.style.display='block';
     updateTotal();
@@ -742,7 +742,7 @@ async function updateTotal(){
     // After deploy, a looked-up wallet shows its exact on-chain priceFor instead.
     const total=plannedTotal(q);
     const from=myMinted+1, to=myMinted+q;
-    setText('qtyTotal','Total (planned, presale): '+fmtBnb(total)+'  ·  mint'+(q>1?'s':'')+' #'+from+(q>1?'–#'+to:''));
+    setText('qtyTotal','Total (presale): '+fmtBnb(total)+'  ·  mint'+(q>1?'s':'')+' #'+from+(q>1?'–#'+to:''));
     return;
   }
   const pr=await rpcCall(CONTRACT,S.priceForN+encAddr(lookupAddr)+encUint(q));
