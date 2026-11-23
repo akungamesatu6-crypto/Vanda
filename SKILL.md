@@ -227,7 +227,7 @@ marketplace fee 0%. No floor price.
 
 ## X (social)
 
-- **Official X: @vanda_nft — https://x.com/vanda_nft** (handle + link
+- **Official X: @vanda_nfth — https://x.com/vanda_nfth** (handle + link
   only; no display name, bio, or follower count invented).
 
 ## Honesty rules

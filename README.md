@@ -69,7 +69,7 @@ and ladder prices).
 
 ## X
 
-Official X: **@vanda_nft** — https://x.com/vanda_nft (handle + link only).
+Official X: **@vanda_nfth** — https://x.com/vanda_nfth (handle + link only).
 
 ## Files
 

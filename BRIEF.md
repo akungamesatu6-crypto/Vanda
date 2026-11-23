@@ -1,7 +1,7 @@
 # VANDA — Locked Brief
 
 Confirmed by the user 2026-11-23 19:39 WIB. X: user shared
-https://x.com/vanda_nft 2026-11-23 20:37 — @vanda_nft is the official
+https://x.com/vanda_nfth 2026-11-23 20:37 — @vanda_nfth is the official
 handle (handle + link only; display name / bio / followers unverified).
 Presale confirmed 2026-11-23 20:33. Agent-only mint (no wallet button)
 + hamburger menu + bilingual roadmap + market.html ordered 2026-11-23
@@ -108,7 +108,7 @@ collaboration with it.
 
 ## X / social
 
-- **Official X: @vanda_nft — https://x.com/vanda_nft** (user-shared
+- **Official X: @vanda_nfth — https://x.com/vanda_nfth** (user-shared
   2026-11-23 20:37). Handle + link ONLY on the page and in docs — do NOT
   invent a display name, bio, or follower count. No other social links
   anywhere.

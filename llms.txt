@@ -30,7 +30,7 @@ Agent ID holder. Max 6 per wallet.
   royalty 5%)
 - Owner / treasury: 0x7379CA652f68fd1daAc11b7b87bb6B222fD129fa
 - baseURI: https://vanda-five.vercel.app/metadata/
-- X: @vanda_nft — https://x.com/vanda_nft (handle + link only)
+- X: @vanda_nfth — https://x.com/vanda_nfth (handle + link only)
 
 ## Contracts (predicted, not deployed)
 
