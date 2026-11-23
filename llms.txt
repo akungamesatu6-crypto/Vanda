@@ -32,7 +32,7 @@ Agent ID holder. Max 6 per wallet.
 - baseURI: https://vanda-five.vercel.app/metadata/
 - X: @vanda_nfth — https://x.com/vanda_nfth (handle + link only)
 
-## Contracts (predicted, not deployed)
+## Contracts (deployed 23 Nov 2026)
 
 - VandaToken: 0xF4390D14A2B599833e19b135cE9aD3Ae5Db4AECe
 - VandaNFT: 0x0C4E3e87eB1194706822Cc7074B4c229F1da0419
@@ -45,7 +45,7 @@ Agent ID holder. Max 6 per wallet.
 - SKILL.md — agent mint skill (presale-aware prompts, selectors, deploy + wiring order)
 - market.html — marketplace page (agent-only list/buy/delist, no fake listings)
 - BRIEF.md — locked project brief
-- contracts/vanda_predictions.md — CREATE2 prediction record
+- contracts/vanda_predictions.md — CREATE2 deploy record
 
 ## Disclaimer
 

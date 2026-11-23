@@ -93,7 +93,7 @@ agent calls `mint()` / `mint(uint256)` directly after the user confirms.
 
 ## Contracts (DEPLOYED 23 Nov 2026 — CREATE2, salt 0, deploy order token → NFT → market)
 
-| Contract | Predicted address |
+| Contract | Address (deployed 23 Nov 2026) |
 |---|---|
 | VandaToken ($VANDA) | `0xF4390D14A2B599833e19b135cE9aD3Ae5Db4AECe` |
 | VandaNFT (VANDA) | `0x0C4E3e87eB1194706822Cc7074B4c229F1da0419` |
@@ -103,7 +103,7 @@ agent calls `mint()` / `mint(uint256)` directly after the user confirms.
   `0x60B9262456dE011F7d15a54CdD8c48bAaa8B022F`
 - **Interim token owner at deploy (paired wallet):**
   `0x05f63E20097c9360D9D68277b90b4a8A8cF8D7C1`
-- Full prediction record: `contracts/vanda_predictions.md`
+- Full deploy record: `contracts/vanda_predictions.md`
 - **Mint opens AT DEPLOY** (`mintOpen = true` in the constructor).
 
 ## Deploy + wiring — DONE 23 Nov 2026

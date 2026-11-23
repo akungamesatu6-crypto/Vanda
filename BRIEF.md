@@ -64,7 +64,7 @@ collaboration with it.
 - **Marketplace:** own escrow, **0% fee** (seller 95% / royalty 5%).
 - **Owner / treasury:** 0x7379CA652f68fd1daAc11b7b87bb6B222fD129fa (new wallet).
 
-## Contracts (predicted — CREATE2, salt 0; tests 37/37)
+## Contracts (deployed 23 Nov 2026 — CREATE2, salt 0; tests 40/40)
 
 - VandaToken: 0xF4390D14A2B599833e19b135cE9aD3Ae5Db4AECe
 - VandaNFT: 0x0C4E3e87eB1194706822Cc7074B4c229F1da0419 (NEW — old 0x30A5… VOID, presale build)

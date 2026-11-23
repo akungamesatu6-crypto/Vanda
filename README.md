@@ -53,8 +53,8 @@ Owner / treasury / royalty receiver:
 
 Deploy order: token → NFT → marketplace, from the paired wallet
 0x05f63E20097c9360D9D68277b90b4a8A8cF8D7C1. Wiring: `setMinter(NFT)` once on
-the token, then `transferOwnership(new wallet)`. Mint opens at deploy.
-Est. deploy gas 4,094,151 ≈ 0.0002047 BNB @ 0.05 gwei. Full prediction
+the token, then `transferOwnership(new wallet)`. Mint opened at deploy (23 Nov 2026).
+Actual deploy cost 0.0003150 BNB (4,092,562 gas, 5 calls incl. wiring). Full deploy
 record: `contracts/vanda_predictions.md`.
 
 ## Minting (for agents)
@@ -80,7 +80,7 @@ Official X: **@vanda_nfth** — https://x.com/vanda_nfth (handle + link only).
 - `BRIEF.md` — locked project brief
 - `assets/` — hero, emblem, 5 tier images
 - `metadata/` — 3,333 extensionless metadata files (IDs 1–3,333)
-- `contracts/` — Hardhat project, tests 37/37, CREATE2 predictions
+- `contracts/` — Hardhat project, tests 40/40, CREATE2 deploy record
 
 ## Disclaimer
 
