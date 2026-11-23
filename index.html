@@ -69,7 +69,7 @@ td b{font-family:Georgia,serif}
 .legend .only{color:var(--acc);font-weight:800}
 .ticket{background:var(--surface);border:1px solid var(--acc);border-radius:20px;padding:22px}
 .ticket .big{font-family:Georgia,serif;font-size:34px;margin:4px 0}
-.ticket select{background:#0A0F0B;color:var(--text);border:1px solid var(--acc);border-radius:10px;padding:10px;font-size:16px}
+.ticket select{background:#0A0F0B;color:var(--text);border:1px solid var(--acc);border-radius:10px;padding:12px;font-size:16px;min-height:44px}
 .btn{display:block;width:100%;text-align:center;background:var(--acc);color:#0B120D;border:0;border-radius:14px;padding:15px;font-size:17px;font-weight:800;cursor:pointer;margin-top:14px;white-space:nowrap}
 .btn:disabled{background:#3A4A3C;cursor:not-allowed;color:#8FA08C}
 .btn.ghost{background:transparent;color:var(--text);border:1px solid var(--acc)}
@@ -103,17 +103,67 @@ pre{white-space:pre-wrap;word-break:break-word;background:#0A0F0B;border:1px sol
 .dock a{margin-left:auto;background:var(--acc);color:#0B120D;border-radius:999px;padding:11px 26px;font-weight:800;text-decoration:none;white-space:nowrap}
 .foot{color:#8FA08C;font-size:13px;text-align:center;padding:10px 20px 30px}
 .foot a{color:var(--acc)}
+.burger{background:transparent;border:1px solid var(--line);border-radius:10px;color:var(--text);font-size:21px;line-height:1;width:44px;height:44px;min-width:44px;cursor:pointer;flex:none}
+.topbar .mintlink{margin-left:auto}
+.navback{position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:40;display:none}
+.navback.open{display:block}
+.nav{position:fixed;top:0;right:0;bottom:0;width:min(300px,84vw);background:var(--surface);border-left:1px solid var(--line);z-index:50;padding:18px 14px;display:none;flex-direction:column;gap:2px;overflow-y:auto}
+.nav.open{display:flex}
+.nav .navhead{display:flex;align-items:center;justify-content:space-between;padding:2px 8px 12px}
+.nav .navhead b{font-family:Georgia,serif;letter-spacing:5px;font-size:19px}
+.nav .navclose{background:transparent;border:1px solid var(--line);border-radius:10px;color:var(--text);font-size:18px;width:44px;height:44px;cursor:pointer}
+.nav a{color:var(--text);text-decoration:none;font-weight:700;padding:13px 12px;border-radius:10px;min-height:44px;display:flex;align-items:center}
+.nav a:hover{background:#0A0F0B}
+.nav a.sub{color:var(--muted);font-weight:600}
+.presale{background:var(--surface);border:1px solid var(--orchid);border-radius:14px;padding:14px 16px;margin-top:14px;font-size:14px}
+.presale b{color:var(--orchid)}
+.pill{display:inline-block;background:var(--orchid);color:#14092B;border-radius:999px;padding:4px 12px;font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase}
+.roadmap{display:grid;gap:10px;margin-top:14px}
+.roadmap article{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px}
+.roadmap h3{font-family:Georgia,serif;margin:0 0 2px;font-size:19px}
+.roadmap h3 .zh{display:block;font-family:system-ui,sans-serif;font-size:15px;color:var(--orchid);margin-top:2px}
+.roadmap p{margin:8px 0 0;color:var(--muted);font-size:14px}
+.roadmap p.zh{color:#C9D6C6}
+.roadmap .pill{margin-top:10px}
+.lookup{background:#0A0F0B;border:1px solid var(--line);border-radius:12px;padding:14px;margin-top:18px;font-size:14px}
+.lookup b{color:var(--acc)}
+.lookup .row{display:flex;justify-content:space-between;gap:10px;padding:3px 0;flex-wrap:wrap}
+.lookup .row span:first-child{color:var(--muted)}
+.lookup input{width:100%;background:#0A0F0B;color:var(--text);border:1px solid var(--line);border-radius:10px;padding:12px;font-size:14px;font-family:ui-monospace,monospace;margin-top:8px}
+.lookup .result{margin-top:8px;font-weight:700}
+.copybtn{min-height:44px;padding:10px 16px}
+.topbar a{padding:12px 20px}
+.dock a{padding:12px 26px}
+.xlink{background:var(--surface);border:1px solid var(--orchid);border-radius:14px;padding:16px;text-align:center}
+.xlink b{color:var(--orchid);font-family:Georgia,serif;font-size:19px;display:block}
+.xlink a{font-weight:800}
+@media(max-width:420px){.topbar span.tagline{display:none}}
 </style>
 </head>
 <body>
 <div class="preview">PREVIEW — contracts not deployed yet · mint disabled · planned numbers only</div>
-<header class="topbar"><b>VANDA</b><span>It blooms through stone.</span><a href="#mint">Mint</a></header>
+<header class="topbar"><button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="mainNav">&#9776;</button><b>VANDA</b><span class="tagline">It blooms through stone.</span><a class="mintlink" href="#mint">Mint</a></header>
+<div class="navback" id="navBack"></div>
+<nav class="nav" id="mainNav" aria-label="Site menu">
+<div class="navhead"><b>VANDA</b><button class="navclose" id="navClose" aria-label="Close menu">&#10005;</button></div>
+<a href="#mint">Mint</a>
+<a href="#how">How It Works</a>
+<a href="#gallery">Gallery</a>
+<a href="#rarity">Rarity</a>
+<a href="#roadmap">Roadmap</a>
+<a href="#token">Token</a>
+<a href="#market">Marketplace</a>
+<a href="#faq">FAQ</a>
+<a class="sub" href="market.html">Marketplace page &rarr;</a>
+<a class="sub" href="https://x.com/vanda_nft" target="_blank" rel="noopener">X &mdash; @vanda_nft &nearr;</a>
+</nav>
 
 <div class="hero"><div class="hero-in">
 <h1>VANDA</h1>
 <p class="tag">It blooms through stone.</p>
 <p>3,333 orchid specimens grown on BNB Chain — one flower per Accession Nº, from <span class="n">Nº 001</span> to <span class="n">Nº 3,333</span>. A Vanda does not ask for rich soil. It roots on bare rock, drinks the rain, and blooms anyway. This collection is that flower: five varieties, sequential IDs, no hidden draw, no promises — just the bloom.</p>
 <div class="cta-row"><a href="#mint">Mint — first FREE</a><a class="ghost" href="#gallery">See the varieties</a></div>
+<p style="margin-top:16px;font-size:14px;color:var(--orchid);font-weight:700">Presale: the first 333 paid mints cost only 0.0001 BNB.</p>
 </div></div>
 
 <section id="status">
@@ -123,6 +173,7 @@ pre{white-space:pre-wrap;word-break:break-word;background:#0A0F0B;border:1px sol
 <p class="big" id="liveStats">Minted: 0 / 3,333 (planned)</p>
 <div class="bar"><i id="mintBar"></i></div>
 <p id="statNote" style="color:var(--orchid);margin:6px 0 0">PREVIEW — contracts not deployed yet. These are planned numbers, not on-chain values. Live stats will appear here once the contracts deploy.</p>
+<div class="presale"><b>Presale — first 333 paid mints at 0.0001 BNB.</b><br>Your first mint is always FREE, presale or not. The presale counts paid mints only, closes itself at 333, and needs no owner action and no allowlist. After it closes, paid mints follow the per-wallet ladder (0.0005 / 0.001 / 0.002 / 0.003 / 0.005 BNB).</div>
 <div class="statgrid">
 <div><b>Minted</b><span id="stMinted">0 / 3,333</span></div>
 <div><b>Free claimed</b><span id="stFree">0</span></div>
@@ -130,19 +181,21 @@ pre{white-space:pre-wrap;word-break:break-word;background:#0A0F0B;border:1px sol
 <div><b>Remaining</b><span id="stLeft">3,333</span></div>
 <div><b>Your next price</b><span id="stNext">FREE</span></div>
 <div><b>Status</b><span id="stOpen">PREVIEW</span></div>
+<div><b>Presale sold</b><span id="stPresale">0 / 333</span></div>
+<div><b>Presale</b><span id="stPresaleState">Planned</span></div>
 </div>
 </div>
 </section>
 
-<section>
+<section id="how">
 <p class="kicker">How it works</p>
 <h2>From stone to bloom</h2>
-<p class="lede">Minting is simple, and it is done by your agent or your wallet — never by us on your behalf.</p>
+<p class="lede">Minting is agent-only. There is no wallet button on this page — your agent mints for you, and it never acts on your behalf without your confirmation.</p>
 <div class="steps">
 <div><b>1 · Hold a SPACE ID Agent ID</b><p>Every mint — free and paid — goes through a SPACE ID Agent ID. Your first mint is free; check your Agent ID below before you mint.</p></div>
-<div><b>2 · Pick how many, 1–6</b><p>One wallet can hold at most 6 VANDA in total. Your first is free, then 0.0005, 0.001, 0.002, 0.003 and 0.005 BNB — at most 0.0115 BNB per wallet.</p></div>
-<div><b>3 · Mint in one transaction</b><p>One batch mint gives you the next sequential Accession numbers in mint order. Paid mints each earn 120,000 $VANDA.</p></div>
-<div><b>4 · The bloom is yours</b><p>Your NFT is a BEP-721 token on BNB Chain with its artwork and metadata at vanda-five.vercel.app/metadata/. Trade it on the VANDA marketplace — 0% fee.</p></div>
+<div><b>2 · Pick how many, 1–6</b><p>One wallet can hold at most 6 VANDA in total. Your first is free. The first 333 paid mints cost a flat 0.0001 BNB (presale); after the presale, paid mints cost 0.0005, 0.001, 0.002, 0.003 and 0.005 BNB by mint count — at most 0.0115 BNB per wallet.</p></div>
+<div><b>3 · Ask your agent to mint</b><p>Copy the agent prompt below, tell your agent how many to mint, and confirm. One batch mint gives you the next sequential Accession numbers in mint order. Paid mints each accrue 120,000 $VANDA.</p></div>
+<div><b>4 · The bloom is yours</b><p>Your NFT is a BEP-721 token on BNB Chain with its artwork and metadata at vanda-five.vercel.app/metadata/. Trade it on the <a href="market.html">VANDA marketplace</a> — 0% fee.</p></div>
 </div>
 </section>
 
@@ -183,24 +236,53 @@ pre{white-space:pre-wrap;word-break:break-word;background:#0A0F0B;border:1px sol
 </div>
 </section>
 
+<section id="roadmap">
+<p class="kicker">Roadmap</p>
+<h2>Four phases, in order</h2>
+<p class="lede">No dates are set — each phase begins when the previous one ends. Every phase below is planned and upcoming while the contracts are in PREVIEW.</p>
+<div class="roadmap">
+<article><h3>Phase 1 — Presale Opens<span class="zh">第一阶段 — 预售开启</span></h3>
+<p>The mint opens with the presale: the first mint of every Agent ID wallet is free, and the first 333 paid mints cost a flat 0.0001 BNB. The presale closes itself at 333 — no owner action, no allowlist.</p>
+<p class="zh">铸造开启，预售同步开始：每个 Agent ID 钱包的首次铸造免费，前 333 次付费铸造统一 0.0001 BNB。达到 333 次后预售自动结束——无需人工操作，无白名单。</p>
+<span class="pill">Planned &middot; upcoming</span></article>
+<article><h3>Phase 2 — Public Mint<span class="zh">第二阶段 — 公开铸造</span></h3>
+<p>After the presale, paid mints follow the per-wallet ladder — 0.0005, 0.001, 0.002, 0.003, 0.005 BNB — until all 3,333 Accession numbers are claimed. The free first mint stays open for every new Agent ID wallet.</p>
+<p class="zh">预售结束后，付费铸造按每钱包阶梯价进行——0.0005、0.001、0.002、0.003、0.005 BNB——直至 3,333 个编号全部铸造完毕。每个新的 Agent ID 钱包仍可免费首次铸造。</p>
+<span class="pill">Planned &middot; upcoming</span></article>
+<article><h3>Phase 3 — Full Bloom<span class="zh">第三阶段 — 全面盛放</span></h3>
+<p>When the last Accession number is claimed, the collection is complete: 3,333 specimens, five varieties, no more mints. Trading continues on the VANDA marketplace at 0% fee.</p>
+<p class="zh">当最后一个编号被铸造，系列即告完整：3,333 件藏品，五个品种，不再增发。交易将继续在 VANDA 市场进行，零手续费。</p>
+<span class="pill">Planned &middot; upcoming</span></article>
+<article><h3>Phase 4 — Beyond the Bloom<span class="zh">第四阶段 — 绽放之后</span></h3>
+<p>No promises beyond the bloom. The collection, its marketplace and its bonus token stand as built — what holders do with them next is theirs.</p>
+<p class="zh">绽放之后，不做额外承诺。藏品、市场与奖励代币按既定机制运行——未来由持有者决定。</p>
+<span class="pill">Planned &middot; upcoming</span></article>
+</div>
+</section>
+
 <section id="mint">
 <p class="kicker">Mint</p>
 <h2>Claim your accession</h2>
 <div class="ticket">
 <p class="big" id="mintHeadline">First mint FREE</p>
 <p id="liveStats2">Mint is in PREVIEW — contracts not deployed yet. Prices below are the planned ladder.</p>
-<p>Connect your wallet on BSC mainnet, pick how many to mint, confirm and pay in BNB. Your mints are the next sequential Accession numbers — one transaction mints your whole batch and charges the ladder sum of the next prices, never price × quantity.</p>
+<p><b>Agent-only minting.</b> This page has no wallet button and never asks your browser to sign anything. Copy an agent prompt below, give it to your agent, and confirm there. Your mints are the next sequential Accession numbers — one transaction mints your whole batch and charges the exact on-chain price (<code>priceFor</code>), never price &times; quantity.</p>
+<div class="presale" style="margin-top:0"><b>Presale is live at mint open:</b> the first 333 paid mints cost a flat <b>0.0001 BNB</b> each — your first mint is still FREE. Presale sold: <b id="mintPresale">0 / 333 (planned)</b>. A batch that crosses the 333 boundary pays presale price for the mints before it and ladder price for the rest.</div>
 <p>Quantity: <select id="qty"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option></select>
 <span id="qtyTotal" style="margin-left:8px;font-weight:700">Total: FREE</span></p>
-<button class="btn" id="mintBtn" disabled>Mint — preview, not deployed</button>
-<button class="btn ghost" id="connectBtn">Connect wallet</button>
-<p id="mintNote">Mint is not open yet — the contracts are not deployed. The mint button stays disabled until deploy.</p>
+<p id="mintNote">Mint is not open yet — the contracts are not deployed. The prompts below are staged for deploy.</p>
 
-<div class="walletbox" id="walletBox">
-<div class="row"><span>Wallet</span><b id="wAddr">Not connected</b></div>
-<div class="row"><span>Your minted</span><b id="wMinted">—</b></div>
-<div class="row"><span>Your next price</span><b id="wNext">FREE (mint #1)</b></div>
-<div class="row"><span>Your $VANDA accrued</span><b id="wAccrued">—</b></div>
+<div class="lookup" id="lookupBox">
+<b>Wallet lookup (read-only)</b>
+<p style="color:var(--muted);margin:6px 0 0">Paste a wallet address to see how many VANDA it minted, its next price and its accrued $VANDA. Nothing here connects a wallet or signs anything.</p>
+<input id="lookupInput" type="text" placeholder="0x…" autocomplete="off" spellcheck="false">
+<button class="btn small" id="lookupBtn">Look up wallet</button>
+<p class="result" id="lookupResult"></p>
+<div class="row"><span>Wallet</span><b id="wAddr">—</b></div>
+<div class="row"><span>Minted</span><b id="wMinted">—</b></div>
+<div class="row"><span>Next price</span><b id="wNext">—</b></div>
+<div class="row"><span>$VANDA accrued</span><b id="wAccrued">—</b></div>
+<div class="row"><span>Agent ID</span><b id="wAgent">—</b></div>
 </div>
 
 <div class="checker">
@@ -214,17 +296,19 @@ pre{white-space:pre-wrap;word-break:break-word;background:#0A0F0B;border:1px sol
 <pre id="promptFree">You are my minting agent for the VANDA NFT collection on BNB Chain (BSC mainnet, chain ID 56).
 
 NFT CONTRACT (PREDICTED address — verify on BscScan that contract code exists at this address before minting; if it has no code yet, STOP and tell me the contracts are not deployed):
-0x30A57bba564bc35a326746Fbf13Ae3053A1fE2CE
+0x0C4E3e87eB1194706822Cc7074B4c229F1da0419
 
 COLLECTION: VANDA — 3,333 supply, BEP-721, SEQUENTIAL token IDs 1–3,333 in mint order ("Accession Nº 001–3,333")
-PRICE LADDER (per wallet, cumulative): mint #1 FREE, #2 0.0005, #3 0.001, #4 0.002, #5 0.003, #6 0.005 BNB. Max 6 per wallet, max 0.0115 BNB per wallet.
+PRESALE: the first 333 PAID mints cost a flat 0.0001 BNB. The free mint (a wallet's first mint) still runs during the presale. presaleSold counts PAID mints only; the presale closes itself at 333 — no owner flip, no allowlist. After the presale, paid mints return to the per-wallet ladder.
+PRICE LADDER (per wallet, cumulative, after the presale): mint #1 FREE, #2 0.0005, #3 0.001, #4 0.002, #5 0.003, #6 0.005 BNB. Max 6 per wallet, max 0.0115 BNB per wallet.
 GATE: every mint requires a SPACE ID Agent ID. Registry: 0x60B9262456dE011F7d15a54CdD8c48bAaa8B022F — check balanceOf(MY_WALLET) &gt; 0 first; if 0, STOP.
 
 Before minting, you MUST call these read-only functions and report the exact results:
 1. mintOpen() — if false, STOP.
 2. totalMinted() — current count and remaining supply.
-3. mintedOf(MY_WALLET) — if already 6, STOP.
-4. priceFor(MY_WALLET, 1) — exact cost of my next mint; for a free mint it must be 0.
+3. presaleActive() and presaleSold() — whether the presale is still running and how many of the 333 presale paid mints are sold.
+4. mintedOf(MY_WALLET) — if already 6, STOP.
+5. priceFor(MY_WALLET, 1) — exact cost of my next mint; for a free mint it must be 0.
 
 Then ask me to confirm. Only after confirmation, call mint(1) and send exactly priceFor(MY_WALLET, 1) in BNB (0 for the free mint). Do NOT approve any token spending — this mint is paid in native BNB only. After the transaction, report the transaction hash and the new Accession number.</pre>
 
@@ -232,19 +316,21 @@ Then ask me to confirm. Only after confirmation, call mint(1) and send exactly p
 <pre id="promptPaid">You are my minting agent for the VANDA NFT collection on BNB Chain (BSC mainnet, chain ID 56).
 
 NFT CONTRACT (PREDICTED address — verify on BscScan that contract code exists at this address before minting; if it has no code yet, STOP and tell me the contracts are not deployed):
-0x30A57bba564bc35a326746Fbf13Ae3053A1fE2CE
+0x0C4E3e87eB1194706822Cc7074B4c229F1da0419
 TOKEN CONTRACT (PREDICTED): 0xF4390D14A2B599833e19b135cE9aD3Ae5Db4AECe ($VANDA)
 
 COLLECTION: VANDA — 3,333 supply, BEP-721, SEQUENTIAL token IDs 1–3,333 in mint order ("Accession Nº 001–3,333")
-PRICE LADDER (per wallet, cumulative): mint #1 FREE, #2 0.0005, #3 0.001, #4 0.002, #5 0.003, #6 0.005 BNB. Max 6 per wallet, max 0.0115 BNB per wallet.
-BONUS: each PAID mint accrues 120,000 $VANDA (max 600,000 per wallet). Free mint accrues 0.
+PRESALE: the first 333 PAID mints cost a flat 0.0001 BNB. The free mint (a wallet's first mint) still runs during the presale. presaleSold counts PAID mints only; the presale closes itself at 333 — no owner flip, no allowlist. After the presale, paid mints return to the per-wallet ladder. A batch that straddles the 333 boundary pays presale price for the mints before it and ladder price for the rest.
+PRICE LADDER (per wallet, cumulative, after the presale): mint #1 FREE, #2 0.0005, #3 0.001, #4 0.002, #5 0.003, #6 0.005 BNB. Max 6 per wallet, max 0.0115 BNB per wallet.
+BONUS: each PAID mint accrues 120,000 $VANDA (max 600,000 per wallet). Free mint accrues 0. Presale paid mints accrue the same 120,000.
 GATE: every mint requires a SPACE ID Agent ID. Registry: 0x60B9262456dE011F7d15a54CdD8c48bAaa8B022F — check balanceOf(MY_WALLET) &gt; 0 first; if 0, STOP.
 
 Before minting, you MUST call these read-only functions and report the exact results:
 1. mintOpen() — if false, STOP.
 2. totalMinted() — current count and remaining supply.
-3. mintedOf(MY_WALLET) — how many I already minted; my batch must fit in 6 minus that number.
-4. priceFor(MY_WALLET, QUANTITY) — exact ladder-sum cost of the batch. NEVER use price x quantity — the ladder makes that wrong.
+3. presaleActive() and presaleSold() — whether the presale is still running; a batch near 333 may straddle the boundary.
+4. mintedOf(MY_WALLET) — how many I already minted; my batch must fit in 6 minus that number.
+5. priceFor(MY_WALLET, QUANTITY) — exact cost of the batch. NEVER use price x quantity — the presale flat price and the ladder make that wrong.
 
 Then ask me to confirm the quantity (1–6 minus what I already minted). Only after confirmation, call mint(QUANTITY) in ONE transaction and send exactly priceFor(MY_WALLET, QUANTITY) in BNB. Do NOT approve any token spending — this mint is paid in native BNB only. After the transaction, report the transaction hash and the new Accession numbers.</pre>
 </div>
@@ -262,7 +348,7 @@ Then ask me to confirm the quantity (1–6 minus what I already minted). Only af
 <div><b>Max per wallet</b><span>600,000</span></div>
 <div><b>Your accrued</b><span id="tokenAccrued">—</span></div>
 </div>
-<p style="color:var(--muted);font-size:14px;margin-top:14px">Your accrued $VANDA appears here once your wallet is connected and the token contract is deployed. $VANDA is a bonus token for the collection; it promises no return.</p>
+<p style="color:var(--muted);font-size:14px;margin-top:14px">Paste your wallet address in the mint-panel lookup above to see your accrued $VANDA once the contracts are deployed. $VANDA is a bonus token for the collection; it promises no return.</p>
 </section>
 
 <section id="market">
@@ -270,33 +356,38 @@ Then ask me to confirm the quantity (1–6 minus what I already minted). Only af
 <h2>Trade the bloom — 0% fee</h2>
 <p class="lede">VANDA has its own escrow marketplace. The marketplace never takes a fee: when a specimen sells, the seller receives 95% and a 5% royalty goes to the collection owner.</p>
 <div class="steps">
-<div><b>List</b><p>Approve the marketplace for your token, then list it at your price. Your NFT stays in escrow until it sells or you cancel.</p></div>
-<div><b>Buy</b><p>Pay the listed price in BNB. The token moves to your wallet in the same transaction; the seller receives 95% and the 5% royalty is forwarded automatically.</p></div>
+<div><b>List</b><p>Ask your agent to approve the marketplace for your token, then list it at your price. Your NFT stays in escrow until it sells or you cancel. Listing opens with the contracts.</p></div>
+<div><b>Buy</b><p>Ask your agent to buy at the listed price in BNB. The token moves to your wallet in the same transaction; the seller receives 95% and the 5% royalty is forwarded automatically.</p></div>
 <div><b>Fees</b><p>Marketplace fee: 0%. Royalty: 5% to the collection owner (0x7379CA652f68fd1daAc11b7b87bb6B222fD129fa). No other fees, ever.</p></div>
 </div>
-<p style="color:var(--muted);font-size:14px">Marketplace contract (predicted, not deployed yet): <code>0x4F35548ad12e873f1021B6f4999B4962eA986283</code>. Listing opens with the contracts.</p>
+<div class="cta-row"><a href="market.html">Open the marketplace</a></div>
+<p style="color:var(--muted);font-size:14px;margin-top:14px">Marketplace contract (PREDICTED, not deployed yet): <code>0x5b6D7F4D89262a025ffdBd518e37FEF37316dd28</code>. Listing opens with the contracts. Trading here is agent-only too — see the marketplace page for the list / buy / delist prompts.</p>
 </section>
 
-<section class="journal">
-<p class="kicker">Journal</p>
-<h2>Honest notes</h2>
+<section class="journal" id="faq">
+<p class="kicker">FAQ</p>
+<h2>Frequently asked questions</h2>
 <article><h3>What is VANDA?</h3><p>A 3,333-piece NFT collection of orchid specimens on BNB Chain (BEP-721). Five varieties — Vanda Alba, Vanda Rosea, Vanda Coerulea, Vanda Aurea and Miss Joaquim — each tied to a fixed Accession number range. The artwork is original, made for this collection.</p></article>
 <article><h3>What do I receive?</h3><p>A BEP-721 token with sequential Accession Nº 001–3,333, its artwork and on-chain metadata. Paid mints also accrue 120,000 $VANDA each (max 600,000 per wallet).</p></article>
 <article><h3>Are the IDs random?</h3><p>No — and that is deliberate. IDs are sequential in mint order: the first mint is Nº 001, the second Nº 002, and so on. Your variety follows your number, so there is no draw, no reveal and no luck involved. The last 84 mints (Nº 3,250–3,333) are the Legendary Miss Joaquim.</p></article>
 <article><h3>Is this affiliated with Binance?</h3><p>No. VANDA is an independent project on BNB Chain, not a Binance collaboration. Minting uses a SPACE ID Agent ID as a gate, which is a requirement of the contract, not a partnership.</p></article>
-<article><h3>How much does it cost?</h3><p>Mint #1 is FREE for any SPACE ID Agent ID holder. Then #2 is 0.0005, #3 is 0.001, #4 is 0.002, #5 is 0.003 and #6 is 0.005 BNB. One wallet can mint at most 6, spending at most 0.0115 BNB in total. A batch costs the sum of the next ladder prices — never price × quantity.</p></article>
+<article><h3>How much does it cost?</h3><p>Mint #1 is FREE for any SPACE ID Agent ID holder. The first 333 paid mints cost a flat 0.0001 BNB (presale). After the presale, #2 is 0.0005, #3 is 0.001, #4 is 0.002, #5 is 0.003 and #6 is 0.005 BNB. One wallet can mint at most 6, spending at most 0.0115 BNB in total. A batch costs the exact on-chain price (<code>priceFor</code>) — never price × quantity — and a batch that crosses the presale boundary mixes presale and ladder prices.</p></article>
+<article><h3>What is the presale?</h3><p>The first 333 paid mints cost 0.0001 BNB flat instead of the ladder price. The free first mint still runs during the presale, and free mints never count toward the 333. The presale closes itself when 333 paid mints are sold — there is no owner switch and no allowlist.</p></article>
+<article><h3>How do I mint without a wallet button?</h3><p>There is no wallet button on this page by design. Copy the free-mint or paid/batch agent prompt from the mint panel, give it to your agent together with how many you want, and confirm in your agent. Your agent calls the contract directly; this page only reads public on-chain data.</p></article>
 <article><h3>How many can one wallet mint?</h3><p>At most 6 VANDA in total, including the free one. The limit is enforced by the contract and counts every mint from that wallet.</p></article>
-<article><h3>Where is the official X account?</h3><p>Not announced yet — the official X account is coming soon. There is no official handle right now; do not trust any account claiming to be VANDA until it is announced here.</p></article>
+<article><h3>Where is the official X account?</h3><p>On X as <a href="https://x.com/vanda_nft" target="_blank" rel="noopener">@vanda_nft</a> — https://x.com/vanda_nft. That handle and link are the only official X details published here.</p></article>
 </section>
 
 <section id="details">
 <p class="kicker">Details</p>
 <h2>Contracts &amp; facts</h2>
 <div class="contractcard">
-<div class="row"><span>VANDA NFT (BEP-721)</span><span><code>0x0000000000000000000000000000000000000000</code> · <a href="https://bscscan.com/address/0x0000000000000000000000000000000000000000" target="_blank" rel="noopener">BscScan</a></span></div>
-<div class="row"><span>$VANDA token</span><span><code>0x0000000000000000000000000000000000000000</code> · <a href="https://bscscan.com/address/0x0000000000000000000000000000000000000000" target="_blank" rel="noopener">BscScan</a></span></div>
-<div class="row"><span>Marketplace (escrow)</span><span><code>0x0000000000000000000000000000000000000000</code> · <a href="https://bscscan.com/address/0x0000000000000000000000000000000000000000" target="_blank" rel="noopener">BscScan</a></span></div>
-<div class="row"><span>Status</span><span>PREVIEW — not deployed yet. Predicted addresses are staged in the project docs (SKILL.md).</span></div>
+<div class="row"><span>VANDA NFT (BEP-721)</span><span><code>0x0C4E3e87eB1194706822Cc7074B4c229F1da0419</code> (PREDICTED) · <a href="https://bscscan.com/address/0x0C4E3e87eB1194706822Cc7074B4c229F1da0419" target="_blank" rel="noopener">BscScan</a></span></div>
+<div class="row"><span>$VANDA token</span><span><code>0xF4390D14A2B599833e19b135cE9aD3Ae5Db4AECe</code> (PREDICTED) · <a href="https://bscscan.com/address/0xF4390D14A2B599833e19b135cE9aD3Ae5Db4AECe" target="_blank" rel="noopener">BscScan</a></span></div>
+<div class="row"><span>Marketplace (escrow)</span><span><code>0x5b6D7F4D89262a025ffdBd518e37FEF37316dd28</code> (PREDICTED) · <a href="https://bscscan.com/address/0x5b6D7F4D89262a025ffdBd518e37FEF37316dd28" target="_blank" rel="noopener">BscScan</a></span></div>
+<div class="row"><span>Status</span><span>PREVIEW — not deployed yet. Addresses above are CREATE2 predictions (salt 0); verify code exists on BscScan before minting.</span></div>
+<div class="row"><span>Presale</span><span>First 333 paid mints at 0.0001 BNB flat; free mint #1 still runs; auto-closes at 333</span></div>
+<div class="row"><span>Deploy order</span><span>Token &rarr; NFT &rarr; marketplace, then setMinter(NFT) once + transferOwnership to the new wallet</span></div>
 <div class="row"><span>Chain</span><span>BNB Smart Chain (56), BEP-721</span></div>
 <div class="row"><span>Supply</span><span>3,333 · sequential IDs 1–3,333</span></div>
 <div class="row"><span>Base URI</span><span><code>https://vanda-five.vercel.app/metadata/</code></span></div>
@@ -310,29 +401,32 @@ Then ask me to confirm the quantity (1–6 minus what I already minted). Only af
 <section>
 <p class="kicker">Share</p>
 <h2>Spread the bloom</h2>
-<div class="xslot"><b>Official X account — coming soon</b>No official VANDA handle yet. This page will announce it here when it exists.</div>
-<div class="cta-row" style="margin-top:16px"><a href="https://x.com/intent/tweet?text=VANDA%20%E2%80%94%203%2C333%20orchids%20on%20BNB%20Chain.%20It%20blooms%20through%20stone.%20First%20mint%20FREE%20with%20a%20SPACE%20ID%20Agent%20ID%2C%20max%206%20per%20wallet.%20https%3A%2F%2Fvanda-five.vercel.app%2F%20%23VANDA%20%23NFT%20%23BNBChain" target="_blank" rel="noopener">Share on X</a></div>
+<div class="xlink"><b>Official X</b><a href="https://x.com/vanda_nft" target="_blank" rel="noopener">@vanda_nft</a><br><span style="color:var(--muted);font-size:13px">https://x.com/vanda_nft</span></div>
+<div class="cta-row" style="margin-top:16px"><a href="https://x.com/intent/tweet?text=VANDA%20%E2%80%94%203%2C333%20orchids%20on%20BNB%20Chain.%20It%20blooms%20through%20stone.%20First%20mint%20FREE%20with%20a%20SPACE%20ID%20Agent%20ID%3B%20first%20333%20paid%20mints%200.0001%20BNB.%20https%3A%2F%2Fvanda-five.vercel.app%2F%20%23VANDA%20%23NFT%20%23BNBChain" target="_blank" rel="noopener">Share on X</a><a class="ghost" href="market.html">Marketplace</a></div>
 </section>
 
-<p class="foot">VANDA — It blooms through stone. · vanda-five.vercel.app<br>NFTs are collectible items and do not promise any return.</p>
+<p class="foot">VANDA — It blooms through stone. · <a href="https://vanda-five.vercel.app/">vanda-five.vercel.app</a> · <a href="https://x.com/vanda_nft" target="_blank" rel="noopener">@vanda_nft</a> · <a href="market.html">Marketplace</a><br>NFTs are collectible items and do not promise any return.</p>
 
 <div class="dock"><span id="dockPrice">First mint FREE<small>max 6/wallet · 3,333 supply</small></span><a href="#mint">Mint</a></div>
 
 <script>
-const ZERO='0x0000000000000000000000000000000000000000';
-const CONTRACT=ZERO; // PREVIEW placeholder — flip to the deployed NFT address at deploy
-const TOKEN=ZERO;    // PREVIEW placeholder — flip to the deployed token address at deploy
+const CONTRACT='0x0C4E3e87eB1194706822Cc7074B4c229F1da0419'; // PREDICTED NFT address (CREATE2, salt 0)
+const TOKEN='0xF4390D14A2B599833e19b135cE9aD3Ae5Db4AECe';    // PREDICTED $VANDA token
+const MARKET='0x5b6D7F4D89262a025ffdBd518e37FEF37316dd28';  // PREDICTED marketplace
 const REGISTRY='0x60B9262456dE011F7d15a54CdD8c48bAaa8B022F';
 const RPCS=['https://bsc-dataseed1.defibit.io/','https://bsc-dataseed.binance.org/','https://bsc-dataseed1.ninicoin.io/'];
-const MAXW=6, SUPPLY=3333;
+const MAXW=6, SUPPLY=3333, PRESALE_CAP=333;
+const PRESALE_PRICE=100000000000000n; // 0.0001 BNB in wei
 const LADDER=[0n,500000000000000n,1000000000000000n,2000000000000000n,3000000000000000n,5000000000000000n]; // wei: FREE, 0.0005, 0.001, 0.002, 0.003, 0.005 BNB
-const S={totalMinted:'0xa2309ff8',paidMinted:'0x2806b8fb',freeMinted:'0xd10a1a2b',mintOpen:'0x24bbd049',maxSupply:'0x32cb6b0c',mintedOf:'0x617692dd',priceFor:'0xd527979a',totalAccrued:'0x4ae8a5b7',balanceOf:'0x70a08231'};
-const PREVIEW=CONTRACT===ZERO;
-let myMinted=0, myAddr=null, myAccrued=null;
+const S={totalMinted:'0xa2309ff8',paidMinted:'0x2806b8fb',freeMinted:'0xd10a1a2b',mintOpen:'0x24bbd049',presaleSold:'0x48cebd67',presaleActive:'0x53135ca0',mintedOf:'0x617692dd',priceFor1:'0xf12a7add',priceForN:'0xd527979a',accruedOf:'0xea0c88b2',balanceOf:'0x70a08231'};
+const PREVIEW=true; // flip to false at deploy, after verifying code exists at CONTRACT on BscScan
+let myMinted=0, lookupAddr=null;
 
-function ladderSumWei(startMinted,qty){
+function plannedTotal(qty){
+  // Planned estimate for a fresh wallet while the presale is active:
+  // first mint FREE, every further paid mint 0.0001 BNB.
   let s=0n;
-  for(let i=0;i<qty;i++){const idx=startMinted+i;if(idx>=LADDER.length)break;s+=LADDER[idx];}
+  for(let i=0;i<qty;i++){if(i>0)s+=PRESALE_PRICE;}
   return s;
 }
 function fmtBnb(wei){
@@ -340,9 +434,6 @@ function fmtBnb(wei){
   const whole=wei/1000000000000000000n, frac=wei%1000000000000000000n;
   let f=frac.toString().padStart(18,'0').replace(/0+$/,'');
   return (whole.toString()+(f?'.'+f:''))+' BNB';
-}
-function nextPriceLabel(startMinted){
-  return startMinted>=LADDER.length?'Max reached':fmtBnb(LADDER[startMinted]);
 }
 async function rpcCall(to,data){
   for(const u of RPCS){
@@ -358,7 +449,6 @@ async function rpcCall(to,data){
 }
 function encAddr(a){return '000000000000000000000000'+a.slice(2).toLowerCase();}
 function encUint(n){return n.toString(16).padStart(64,'0');}
-
 function setText(id,txt){const el=document.getElementById(id);if(el)el.textContent=txt;}
 function setBar(pct){const el=document.getElementById('mintBar');if(el)el.style.width=pct+'%';}
 
@@ -367,13 +457,14 @@ async function readLive(){
   if(PREVIEW){
     setText('liveStats','Minted: 0 / 3,333 (planned)');
     setText('stMinted','0 / 3,333');setText('stFree','0');setText('stPaid','0');setText('stLeft','3,333');
-    setText('stNext','FREE');setText('stOpen','PREVIEW');setBar(0);
-    setText('liveStats2','Mint is in PREVIEW — contracts not deployed yet. Prices below are the planned ladder.');
+    setText('stNext','FREE');setText('stOpen','PREVIEW');
+    setText('stPresale','0 / 333');setText('stPresaleState','Planned');
+    setText('mintPresale','0 / 333 (planned)');
+    setBar(0);
+    setText('liveStats2','Mint is in PREVIEW — contracts not deployed yet. Prices below are the planned ladder + presale.');
     setText('mintHeadline','First mint FREE');
-    setText('mintNote','Mint is not open yet — the contracts are not deployed. The mint button stays disabled until deploy.');
+    setText('mintNote','Mint is not open yet — the contracts are not deployed. The prompts below are staged for deploy.');
     setText('dockPrice','First mint FREE');
-    const btn=document.getElementById('mintBtn');
-    if(btn){btn.disabled=true;btn.textContent='Mint — preview, not deployed';}
     if(note)note.style.display='block';
     updateTotal();
     return;
@@ -382,60 +473,84 @@ async function readLive(){
   const pm=await rpcCall(CONTRACT,S.paidMinted);
   const fm=await rpcCall(CONTRACT,S.freeMinted);
   const mo=await rpcCall(CONTRACT,S.mintOpen);
+  const ps=await rpcCall(CONTRACT,S.presaleSold);
+  const pa=await rpcCall(CONTRACT,S.presaleActive);
   if(tm===null||mo===null){if(note){note.style.display='block';note.textContent='Live stats unavailable — check again in a moment.';}return;}
   if(note)note.style.display='none';
   const minted=parseInt(tm,16);
   const paid=pm?parseInt(pm,16):null;
   const free=fm?parseInt(fm,16):null;
   const open=parseInt(mo,16)===1;
+  const sold=ps?parseInt(ps,16):null;
+  const active=pa?parseInt(pa,16)===1:null;
   setText('liveStats','Minted: '+minted+' / '+SUPPLY+(open?' · OPEN':' · CLOSED'));
   setText('stMinted',minted+' / '+SUPPLY);
   setText('stFree',free===null?'—':String(free));
   setText('stPaid',paid===null?'—':String(paid));
   setText('stLeft',String(SUPPLY-minted));
-  setText('stNext',nextPriceLabel(myMinted));
+  setText('stNext',fmtBnb(LADDER[Math.min(myMinted,LADDER.length-1)]));
   setText('stOpen',open?'OPEN':'CLOSED');
+  setText('stPresale',sold===null?'—':sold+' / '+PRESALE_CAP);
+  setText('stPresaleState',active===null?'—':(active?'ACTIVE':'CLOSED'));
+  setText('mintPresale',sold===null?'—':sold+' / '+PRESALE_CAP+(active?' · active':' · closed'));
   setBar(Math.min(100,minted/SUPPLY*100));
-  setText('liveStats2',open?'Mint is open — choose a quantity and confirm in your wallet.':'Mint is not open right now.');
-  setText('mintHeadline',myMinted===0?'First mint FREE':'Your next mint: '+nextPriceLabel(myMinted));
-  setText('mintNote',open?'Mint is open now — choose a quantity and confirm in your wallet.':'Mint is not open right now.');
-  setText('dockPrice',nextPriceLabel(myMinted));
-  const btn=document.getElementById('mintBtn');
-  if(btn){btn.disabled=!open;btn.textContent=open?'Mint':'Mint Closed';}
+  setText('liveStats2',open?'Mint is open — ask your agent to mint with the prompts below.':'Mint is not open right now.');
+  setText('mintHeadline',myMinted===0?'First mint FREE':'Your next mint: '+fmtBnb(LADDER[Math.min(myMinted,LADDER.length-1)]));
+  setText('mintNote',open?'Mint is open now — copy a prompt below and give it to your agent.':'Mint is not open right now.');
+  setText('dockPrice',myMinted===0?'First mint FREE':fmtBnb(LADDER[Math.min(myMinted,LADDER.length-1)]));
   updateTotal();
 }
 
-function updateTotal(){
+async function updateTotal(){
   const qEl=document.getElementById('qty');
   let q=parseInt(qEl?qEl.value:'1',10)||1;
   const left=MAXW-myMinted;
   if(left<=0){setText('qtyTotal','Wallet limit reached (6/6)');return;}
   if(q>left)q=left;
-  const total=ladderSumWei(myMinted,q);
+  if(PREVIEW||!lookupAddr){
+    // Planned estimate: fresh wallet in the presale (first FREE, rest 0.0001 each).
+    // After deploy, a looked-up wallet shows its exact on-chain priceFor instead.
+    const total=plannedTotal(q);
+    const from=myMinted+1, to=myMinted+q;
+    setText('qtyTotal','Total (planned, presale): '+fmtBnb(total)+'  ·  mint'+(q>1?'s':'')+' #'+from+(q>1?'–#'+to:''));
+    return;
+  }
+  const pr=await rpcCall(CONTRACT,S.priceForN+encAddr(lookupAddr)+encUint(q));
+  if(pr===null){setText('qtyTotal','Could not read the on-chain price — try again.');return;}
+  const total=BigInt(pr);
   const from=myMinted+1, to=myMinted+q;
   setText('qtyTotal','Total: '+fmtBnb(total)+'  ·  mint'+(q>1?'s':'')+' #'+from+(q>1?'–#'+to:''));
 }
 
-async function connectWallet(){
-  if(!window.ethereum){alert('No wallet found. Open this page in a wallet browser (e.g. Binance Wallet) to mint.');return;}
-  try{
-    const accounts=await window.ethereum.request({method:'eth_requestAccounts'});
-    myAddr=accounts[0];
-    setText('wAddr',myAddr.slice(0,6)+'…'+myAddr.slice(-4));
-    if(!PREVIEW){
-      const mh=await rpcCall(CONTRACT,S.mintedOf+encAddr(myAddr));
-      myMinted=mh?parseInt(mh,16):0;
-      const ah=await rpcCall(TOKEN,S.totalAccrued+encAddr(myAddr));
-      myAccrued=ah?parseInt(ah,16):null;
-    }else{
-      myMinted=0;myAccrued=null;
-    }
-    setText('wMinted',PREVIEW?myMinted+' (planned)':String(myMinted));
-    setText('wNext',nextPriceLabel(myMinted));
-    setText('wAccrued',myAccrued===null?'—':myAccrued.toLocaleString('en-US')+' $VANDA');
-    setText('tokenAccrued',myAccrued===null?'—':myAccrued.toLocaleString('en-US')+' $VANDA');
-    updateTotal();readLive();
-  }catch(e){alert('Wallet connection failed: '+(e&&e.message?e.message:e));}
+async function lookupWallet(){
+  const inp=document.getElementById('lookupInput');
+  const res=document.getElementById('lookupResult');
+  const a=inp?inp.value.trim():'';
+  if(!/^0x[0-9a-fA-F]{40}$/.test(a)){if(res){res.className='result no';res.textContent='Enter a valid wallet address (0x + 40 hex characters).';}return;}
+  lookupAddr=a;
+  setText('wAddr',a.slice(0,6)+'…'+a.slice(-4));
+  if(PREVIEW){
+    if(res){res.className='result';res.textContent='Contracts not deployed yet — on-chain lookup will work after deploy. Planned: first mint FREE, presale paid mints 0.0001 BNB.';}
+    setText('wMinted','— (preview)');setText('wNext','FREE (mint #1, planned)');setText('wAccrued','— (preview)');setText('wAgent','— (preview)');
+    myMinted=0;updateTotal();return;
+  }
+  if(res){res.className='result';res.textContent='Looking up…';}
+  const mh=await rpcCall(CONTRACT,S.mintedOf+encAddr(a));
+  const ah=await rpcCall(TOKEN,S.accruedOf+encAddr(a));
+  const bh=await rpcCall(REGISTRY,S.balanceOf+encAddr(a));
+  const ph=await rpcCall(CONTRACT,S.priceFor1+encAddr(a));
+  if(mh===null){if(res){res.className='result no';res.textContent='Could not reach the contracts — try again in a moment.';}return;}
+  myMinted=parseInt(mh,16);
+  const accrued=ah?parseInt(ah,16):null;
+  const agentN=bh?parseInt(bh,16):null;
+  const next=ph?BigInt(ph):null;
+  setText('wMinted',String(myMinted)+' / 6');
+  setText('wNext',next===null?'—':fmtBnb(next));
+  setText('wAccrued',accrued===null?'—':accrued.toLocaleString('en-US')+' $VANDA');
+  setText('wAgent',agentN===null?'—':(agentN>0?'YES ('+agentN+')':'NO'));
+  setText('tokenAccrued',accrued===null?'—':accrued.toLocaleString('en-US')+' $VANDA');
+  if(res){res.className='result yes';res.textContent='Found: '+myMinted+' minted'+(agentN>0?' · holds an Agent ID':' · NO Agent ID — cannot mint yet')+'.';}
+  updateTotal();
 }
 
 async function checkAgentId(){
@@ -451,39 +566,6 @@ async function checkAgentId(){
     if(n>0){res.className='result yes';res.textContent='YES — this address holds '+n+' SPACE ID Agent ID'+(n>1?'s':'')+'. It can mint.';}
     else{res.className='result no';res.textContent='NO — this address holds no SPACE ID Agent ID. It cannot mint yet.';}
   }
-}
-
-async function doMint(){
-  const btn=document.getElementById('mintBtn');
-  if(!btn||btn.disabled)return;
-  if(PREVIEW){alert('Mint is not open yet — the contracts are not deployed.');return;}
-  if(!window.ethereum){alert('No wallet found. Open this page in a wallet browser (e.g. Binance Wallet) to mint.');return;}
-  try{
-    const chain=await window.ethereum.request({method:'eth_chainId'});
-    if(chain!=='0x38'){
-      try{await window.ethereum.request({method:'wallet_switchEthereumChain',params:[{chainId:'0x38'}]});}
-      catch(e){await window.ethereum.request({method:'wallet_addEthereumChain',params:[{chainId:'0x38',chainName:'BNB Smart Chain',nativeCurrency:{name:'BNB',symbol:'BNB',decimals:18},rpcUrls:['https://bsc-dataseed.binance.org/'],blockExplorerUrls:['https://bscscan.com']}]});}
-    }
-    const accounts=await window.ethereum.request({method:'eth_requestAccounts'});
-    const me=accounts[0];
-    const mh=await rpcCall(CONTRACT,S.mintedOf+encAddr(me));
-    const minted=mh?parseInt(mh,16):0;
-    myMinted=minted;
-    const qEl=document.getElementById('qty');
-    let q=parseInt(qEl?qEl.value:'1',10)||1;
-    const left=MAXW-minted;
-    if(left<=0){alert('You already minted the maximum of 6 for this wallet.');return;}
-    if(q>left)q=left;
-    const pr=await rpcCall(CONTRACT,S.priceFor+encAddr(me)+encUint(q));
-    if(pr===null){alert('Could not read the ladder price from the contract. Please try again.');return;}
-    const value=BigInt(pr);
-    const local=ladderSumWei(minted,q);
-    if(value!==local){if(!confirm('On-chain price ('+fmtBnb(value)+') differs from the planned ladder sum ('+fmtBnb(local)+'). Continue with the on-chain price?'))return;}
-    const data='0xa0712d68'+encUint(q);
-    const tx=await window.ethereum.request({method:'eth_sendTransaction',params:[{from:me,to:CONTRACT,value:'0x'+value.toString(16),data:data}]});
-    alert('Mint transaction sent: '+tx);
-    setTimeout(readLive,15000);
-  }catch(e){alert('Mint failed or was rejected: '+(e&&e.message?e.message:e));}
 }
 
 function copyPrompt(id){
@@ -502,8 +584,18 @@ function fallbackCopy(txt,btn){
   function done2(b){if(b){const o=b.textContent;b.textContent='Copied!';setTimeout(()=>{b.textContent=o;},1500);}}
 }
 
-document.getElementById('mintBtn').addEventListener('click',doMint);
-document.getElementById('connectBtn').addEventListener('click',connectWallet);
+function setNav(open){
+  const nav=document.getElementById('mainNav'), back=document.getElementById('navBack'), btn=document.getElementById('burger');
+  if(nav)nav.classList.toggle('open',open);
+  if(back)back.classList.toggle('open',open);
+  if(btn)btn.setAttribute('aria-expanded',open?'true':'false');
+}
+document.getElementById('burger').addEventListener('click',function(){setNav(!document.getElementById('mainNav').classList.contains('open'));});
+document.getElementById('navClose').addEventListener('click',function(){setNav(false);});
+document.getElementById('navBack').addEventListener('click',function(){setNav(false);});
+document.querySelectorAll('#mainNav a').forEach(function(a){a.addEventListener('click',function(){setNav(false);});});
+document.addEventListener('keydown',function(e){if(e.key==='Escape')setNav(false);});
+document.getElementById('lookupBtn').addEventListener('click',lookupWallet);
 document.getElementById('checkBtn').addEventListener('click',checkAgentId);
 document.getElementById('qty').addEventListener('change',updateTotal);
 document.querySelectorAll('.copybtn').forEach(function(b){b.addEventListener('click',function(){copyPrompt(b.getAttribute('data-copy'));});});

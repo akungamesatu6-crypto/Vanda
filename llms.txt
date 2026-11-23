@@ -8,7 +8,7 @@ Agent ID holder. Max 6 per wallet.
 
 - Site: https://vanda-five.vercel.app/
 - Chain: BNB Smart Chain (BSC mainnet, chain ID 56), BEP-721
-- Language: English only
+- Language: English only (roadmap also in Chinese)
 - Status: PREVIEW — contracts not deployed yet
 
 ## Spec
@@ -17,8 +17,11 @@ Agent ID holder. Max 6 per wallet.
 - Tiers: Common "Vanda Alba" 1–1,666 (1,666) / Uncommon "Vanda Rosea"
   1,667–2,499 (833) / Rare "Vanda Coerulea" 2,500–2,999 (500) / Epic "Vanda
   Aurea" 3,000–3,249 (250) / Legendary "Miss Joaquim" 3,250–3,333 (84)
-- Price ladder (per wallet, cumulative): #1 FREE, #2 0.0005, #3 0.001, #4
-  0.002, #5 0.003, #6 0.005 BNB; max 6/wallet; max 0.0115 BNB/wallet
+- Presale: first 333 PAID mints @ 0.0001 BNB flat; free mint #1 still
+  runs; presaleSold counts paid only; auto-closes at 333, no owner flip
+- Price ladder (per wallet, cumulative, after the presale): #1 FREE, #2
+  0.0005, #3 0.001, #4 0.002, #5 0.003, #6 0.005 BNB; max 6/wallet;
+  max 0.0115 BNB/wallet
 - Batch cost = ladder sum of the next prices (never price x qty)
 - Gate: SPACE ID Agent ID for every mint (no allowlist)
 - Token $VANDA: 1,000,000,000 total (540,000,000 pool / 460,000,000
@@ -27,19 +30,20 @@ Agent ID holder. Max 6 per wallet.
   royalty 5%)
 - Owner / treasury: 0x7379CA652f68fd1daAc11b7b87bb6B222fD129fa
 - baseURI: https://vanda-five.vercel.app/metadata/
-- X: TBD — official account coming soon, no handle yet
+- X: @vanda_nft — https://x.com/vanda_nft (handle + link only)
 
 ## Contracts (predicted, not deployed)
 
 - VandaToken: 0xF4390D14A2B599833e19b135cE9aD3Ae5Db4AECe
-- VandaNFT: 0x30A57bba564bc35a326746Fbf13Ae3053A1fE2CE
-- VandaMarketplace: 0x4F35548ad12e873f1021B6f4999B4962eA986283
+- VandaNFT: 0x0C4E3e87eB1194706822Cc7074B4c229F1da0419
+- VandaMarketplace: 0x5b6D7F4D89262a025ffdBd518e37FEF37316dd28
 - SPACE ID Agent ID registry: 0x60B9262456dE011F7d15a54CdD8c48bAaa8B022F
 
 ## Docs
 
 - README.md — project overview
-- SKILL.md — agent mint skill (prompts, selectors, deploy + wiring order)
+- SKILL.md — agent mint skill (presale-aware prompts, selectors, deploy + wiring order)
+- market.html — marketplace page (agent-only list/buy/delist, no fake listings)
 - BRIEF.md — locked project brief
 - contracts/vanda_predictions.md — CREATE2 prediction record
 

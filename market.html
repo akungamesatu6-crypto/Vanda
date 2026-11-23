@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>VANDA Marketplace — Trade the bloom, 0% fee</title>
+<meta name="description" content="VANDA marketplace — own escrow, 0% fee, 5% royalty. List, buy and delist via your agent. No wallet button on this page.">
+<meta property="og:title" content="VANDA Marketplace — Trade the bloom, 0% fee">
+<meta property="og:description" content="Own escrow marketplace for VANDA (3,333 orchids on BNB Chain). 0% fee, 5% royalty. Agent-only.">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="og:image" content="https://vanda-five.vercel.app/assets/hero.jpg">
+<meta name="twitter:image" content="https://vanda-five.vercel.app/assets/hero.jpg">
+<style>
+*{box-sizing:border-box}
+:root{--bg:#0B120D;--surface:#122015;--surface2:#0A0F0B;--line:#2A3B2E;--text:#E9F1E7;--muted:#A9BBA6;--acc:#7CFC66;--acc-dim:#4E9E45;--orchid:#B388FF;--orchid-deep:#8E6CC9}
+body{margin:0;font-family:system-ui,-apple-system,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;padding-bottom:calc(76px + env(safe-area-inset-bottom));overflow-x:hidden}
+a{color:var(--acc)}
+.preview{background:var(--orchid);color:#14092B;text-align:center;font-size:12px;font-weight:800;padding:9px 12px;letter-spacing:1px}
+.topbar{position:sticky;top:0;z-index:30;display:flex;align-items:center;gap:12px;background:rgba(11,18,13,.92);backdrop-filter:blur(6px);border-bottom:1px solid var(--line);padding:10px 16px}
+.topbar b{font-family:Georgia,serif;letter-spacing:5px;font-size:19px}
+.topbar span{color:var(--muted);font-size:12px}
+.topbar a.mintlink{margin-left:auto;background:var(--acc);color:#0B120D;border-radius:999px;padding:12px 20px;font-weight:800;text-decoration:none;white-space:nowrap;font-size:14px}
+.burger{background:transparent;border:1px solid var(--line);border-radius:10px;color:var(--text);font-size:21px;line-height:1;width:44px;height:44px;min-width:44px;cursor:pointer;flex:none}
+.navback{position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:40;display:none}
+.navback.open{display:block}
+.nav{position:fixed;top:0;right:0;bottom:0;width:min(300px,84vw);background:var(--surface);border-left:1px solid var(--line);z-index:50;padding:18px 14px;display:none;flex-direction:column;gap:2px;overflow-y:auto}
+.nav.open{display:flex}
+.nav .navhead{display:flex;align-items:center;justify-content:space-between;padding:2px 8px 12px}
+.nav .navhead b{font-family:Georgia,serif;letter-spacing:5px;font-size:19px}
+.nav .navclose{background:transparent;border:1px solid var(--line);border-radius:10px;color:var(--text);font-size:18px;width:44px;height:44px;cursor:pointer}
+.nav a{color:var(--text);text-decoration:none;font-weight:700;padding:13px 12px;border-radius:10px;min-height:44px;display:flex;align-items:center}
+.nav a:hover{background:#0A0F0B}
+.nav a.sub{color:var(--muted);font-weight:600}
+.hero{padding:44px 20px 8px;max-width:760px;margin:0 auto}
+.hero h1{font-family:Georgia,serif;font-size:clamp(32px,10vw,48px);margin:0;line-height:1.1}
+.hero .tag{font-family:Georgia,serif;font-style:italic;font-size:19px;color:var(--acc);margin:10px 0}
+.hero p{color:#C9D6C6;max-width:560px}
+section{padding:28px 20px;max-width:760px;margin:0 auto}
+section h2{font-family:Georgia,serif;font-size:30px;color:var(--text);margin:0 0 6px}
+section .kicker{color:var(--acc);font-size:12px;letter-spacing:3px;font-weight:800;text-transform:uppercase}
+section p.lede{color:var(--muted)}
+.status{background:var(--surface);border:1px solid var(--acc);border-radius:20px;padding:22px}
+.status .big{font-family:Georgia,serif;font-size:28px;margin:4px 0}
+.statgrid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}
+.statgrid div{background:#0A0F0B;border:1px solid var(--line);border-radius:12px;padding:10px 12px}
+.statgrid b{display:block;color:var(--acc);font-size:12px;letter-spacing:1px;text-transform:uppercase}
+.statgrid span{font-size:17px;font-weight:700}
+.empty{background:var(--surface);border:1px dashed var(--orchid);border-radius:16px;padding:22px;text-align:center;color:var(--muted)}
+.empty b{color:var(--orchid);font-family:Georgia,serif;font-size:19px;display:block}
+.steps{display:grid;gap:10px;margin-top:14px}
+.steps div{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:14px 16px}
+.steps b{font-family:Georgia,serif;color:var(--acc);font-size:17px}
+.steps p{margin:4px 0 0;color:var(--muted);font-size:14px}
+.btn{display:block;width:100%;text-align:center;background:var(--acc);color:#0B120D;border:0;border-radius:14px;padding:15px;font-size:17px;font-weight:800;cursor:pointer;margin-top:14px;white-space:nowrap}
+.btn.small{width:auto;display:inline-block;padding:12px 20px;font-size:14px;margin-top:10px}
+.btn.ghost{background:transparent;color:var(--text);border:1px solid var(--acc)}
+.lookup{background:#0A0F0B;border:1px solid var(--line);border-radius:12px;padding:14px;margin-top:18px;font-size:14px}
+.lookup b{color:var(--acc)}
+.lookup .row{display:flex;justify-content:space-between;gap:10px;padding:3px 0;flex-wrap:wrap}
+.lookup .row span:first-child{color:var(--muted)}
+.lookup input{width:100%;background:#0A0F0B;color:var(--text);border:1px solid var(--line);border-radius:10px;padding:12px;font-size:14px;font-family:ui-monospace,monospace;margin-top:8px}
+.lookup .result{margin-top:8px;font-weight:700}
+.lookup .result.yes{color:var(--acc)}
+.lookup .result.no{color:#FF9A9A}
+pre{white-space:pre-wrap;word-break:break-word;background:#0A0F0B;border:1px solid var(--line);border-radius:12px;padding:14px;font-size:12px;line-height:1.5;color:#C9D6C6}
+.prompthead{display:flex;align-items:baseline;justify-content:space-between;gap:10px;margin-top:18px}
+.prompthead b{font-size:15px}
+.copybtn{background:transparent;color:var(--acc);border:1px solid var(--acc);border-radius:999px;padding:10px 16px;min-height:44px;font-size:13px;font-weight:700;cursor:pointer;white-space:nowrap}
+.contractcard{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:18px;font-size:14px}
+.contractcard .row{display:flex;justify-content:space-between;gap:10px;padding:8px 0;border-bottom:1px solid var(--line);flex-wrap:wrap}
+.contractcard .row:last-child{border-bottom:0}
+.contractcard .row span:first-child{color:var(--muted)}
+.contractcard code{font-size:12px;word-break:break-all}
+.xlink{background:var(--surface);border:1px solid var(--orchid);border-radius:14px;padding:16px;text-align:center}
+.xlink b{color:var(--orchid);font-family:Georgia,serif;font-size:19px;display:block}
+.xlink a{font-weight:800}
+.cta-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+.cta-row a{background:var(--acc);color:#0B120D;border-radius:999px;padding:13px 26px;font-weight:800;text-decoration:none}
+.cta-row a.ghost{background:transparent;color:var(--text);border:1px solid var(--acc)}
+.dock{position:fixed;left:0;right:0;bottom:0;z-index:20;background:var(--surface);border-top:1px solid var(--acc);display:flex;align-items:center;gap:12px;padding:12px 16px calc(12px + env(safe-area-inset-bottom))}
+.dock span{font-weight:800}
+.dock span small{display:block;color:var(--muted);font-size:12px;font-weight:400}
+.dock a{margin-left:auto;background:var(--acc);color:#0B120D;border-radius:999px;padding:12px 26px;font-weight:800;text-decoration:none;white-space:nowrap}
+.foot{color:#8FA08C;font-size:13px;text-align:center;padding:10px 20px 30px}
+.foot a{color:var(--acc)}
+@media(max-width:420px){.topbar span.tagline{display:none}}
+</style>
+</head>
+<body>
+<div class="preview">PREVIEW — contracts not deployed yet · no listings · planned numbers only</div>
+<header class="topbar"><button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="mainNav">&#9776;</button><b>VANDA</b><span class="tagline">It blooms through stone.</span><a class="mintlink" href="index.html#mint">Mint</a></header>
+<div class="navback" id="navBack"></div>
+<nav class="nav" id="mainNav" aria-label="Site menu">
+<div class="navhead"><b>VANDA</b><button class="navclose" id="navClose" aria-label="Close menu">&#10005;</button></div>
+<a href="index.html#mint">Mint</a>
+<a href="index.html#how">How It Works</a>
+<a href="index.html#gallery">Gallery</a>
+<a href="index.html#rarity">Rarity</a>
+<a href="index.html#roadmap">Roadmap</a>
+<a href="index.html#token">Token</a>
+<a href="#listings">Marketplace</a>
+<a href="index.html#faq">FAQ</a>
+<a class="sub" href="index.html">VANDA home &larr;</a>
+<a class="sub" href="https://x.com/vanda_nft" target="_blank" rel="noopener">X &mdash; @vanda_nft &nearr;</a>
+</nav>
+
+<div class="hero">
+<h1>VANDA Marketplace</h1>
+<p class="tag">Trade the bloom — 0% fee.</p>
+<p>VANDA has its own escrow marketplace. When a specimen sells, the seller receives 95% and a 5% royalty goes to the collection owner. The marketplace itself never takes a fee. Listing, buying and delisting are agent-only — there is no wallet button on this page.</p>
+<div class="cta-row"><a href="index.html#mint">Mint VANDA</a><a class="ghost" href="#listings">See listings</a></div>
+</div>
+
+<section id="listings">
+<p class="kicker">Listings</p>
+<h2>On the market now</h2>
+<div class="status">
+<p class="big" id="liveStats">No listings yet (planned)</p>
+<p id="statNote" style="color:var(--orchid);margin:6px 0 0">PREVIEW — the marketplace contract is not deployed yet. There are no listings because nothing is listed, not because listings are hidden. Listings will appear here once the contracts deploy and holders list.</p>
+<div class="statgrid">
+<div><b>Marketplace fee</b><span>0%</span></div>
+<div><b>Royalty</b><span>5%</span></div>
+<div><b>Seller receives</b><span>95%</span></div>
+<div><b>Status</b><span id="stOpen">PREVIEW</span></div>
+</div>
+</div>
+<div class="empty" style="margin-top:14px"><b>No listings yet</b>Nothing is listed right now. Come back after the mint opens — or ask your agent to list a VANDA you own with the prompt below.</div>
+
+<div class="lookup">
+<b>Check a listing (read-only)</b>
+<p style="color:var(--muted);margin:6px 0 0">Enter an Accession number (1–3,333) to see whether it is listed, at what price, and by whom. Nothing here connects a wallet.</p>
+<input id="listingInput" type="text" placeholder="e.g. 42" autocomplete="off" spellcheck="false" inputmode="numeric">
+<button class="btn small" id="listingBtn">Check listing</button>
+<p class="result" id="listingResult"></p>
+<div class="row"><span>Accession Nº</span><b id="lId">—</b></div>
+<div class="row"><span>Seller</span><b id="lSeller">—</b></div>
+<div class="row"><span>Price</span><b id="lPrice">—</b></div>
+<div class="row"><span>Status</span><b id="lActive">—</b></div>
+</div>
+</section>
+
+<section id="how-market">
+<p class="kicker">How it works</p>
+<h2>Escrow, in three moves</h2>
+<p class="lede">The marketplace holds the NFT while it is listed. A seller cannot move or re-list it elsewhere in the meantime, and a buy can never fail on a missing approval.</p>
+<div class="steps">
+<div><b>1 · List</b><p>Your agent approves the marketplace for your token, then lists it at your price in BNB. The NFT moves into escrow — it stays there until it sells or you cancel.</p></div>
+<div><b>2 · Buy</b><p>A buyer&rsquo;s agent pays the exact listed price in BNB. The NFT moves to the buyer in the same transaction; the seller receives 95% and the 5% royalty is forwarded automatically.</p></div>
+<div><b>3 · Delist</b><p>Change your mind? Your agent delists, and the NFT returns to your wallet. You can also update the price while it is listed.</p></div>
+<div><b>Fees</b><p>Marketplace fee: 0%. Royalty: 5% to the collection owner (0x7379CA652f68fd1daAc11b7b87bb6B222fD129fa). No floor price, no other fees, ever. Payment must equal the listed price exactly.</p></div>
+</div>
+</section>
+
+<section id="prompts">
+<p class="kicker">Agent prompts</p>
+<h2>Trade with your agent</h2>
+<p class="lede">Copy a prompt, give it to your agent, and confirm there. Your agent calls the contract directly; this page only reads public on-chain data.</p>
+
+<div class="prompthead"><b>Agent prompt — list a VANDA</b><button class="copybtn" data-copy="promptList">Copy</button></div>
+<pre id="promptList">You are my trading agent for the VANDA NFT collection on BNB Chain (BSC mainnet, chain ID 56).
+
+MARKETPLACE CONTRACT (PREDICTED address — verify on BscScan that contract code exists at this address before trading; if it has no code yet, STOP and tell me the contracts are not deployed):
+0x5b6D7F4D89262a025ffdBd518e37FEF37316dd28
+NFT CONTRACT (PREDICTED): 0x0C4E3e87eB1194706822Cc7074B4c229F1da0419
+
+I want to LIST Accession Nº TOKEN_ID at PRICE BNB.
+Before listing, you MUST call these read-only functions and report the exact results:
+1. ownerOf(TOKEN_ID) on the NFT contract — it must be MY_WALLET; if not, STOP.
+2. listing(TOKEN_ID) on the marketplace — if it is already active, STOP and tell me.
+
+Then ask me to confirm the token ID and price. Only after confirmation:
+1. Approve the marketplace for this token (approve(marketplace, TOKEN_ID) on the NFT, or setApprovalForAll(marketplace, true)).
+2. Call list(TOKEN_ID, PRICE_IN_WEI) on the marketplace. The price must be greater than 0.
+The NFT moves into marketplace escrow until it sells or I delist it. After the transaction, report the transaction hash.</pre>
+
+<div class="prompthead"><b>Agent prompt — buy a VANDA</b><button class="copybtn" data-copy="promptBuy">Copy</button></div>
+<pre id="promptBuy">You are my trading agent for the VANDA NFT collection on BNB Chain (BSC mainnet, chain ID 56).
+
+MARKETPLACE CONTRACT (PREDICTED address — verify on BscScan that contract code exists at this address before trading; if it has no code yet, STOP and tell me the contracts are not deployed):
+0x5b6D7F4D89262a025ffdBd518e37FEF37316dd28
+NFT CONTRACT (PREDICTED): 0x0C4E3e87eB1194706822Cc7074B4c229F1da0419
+
+I want to BUY Accession Nº TOKEN_ID.
+Before buying, you MUST call listing(TOKEN_ID) on the marketplace and report the exact results: seller, price, active. If it is not active, STOP. The price is in BNB; on sale the seller receives 95% and a 5% royalty goes to the collection owner. Marketplace fee is 0%.
+
+Then ask me to confirm the token ID and price. Only after confirmation, call buy(TOKEN_ID) and send EXACTLY the listed price in BNB — no more, no less. Do NOT approve any token spending — this purchase is paid in native BNB only. After the transaction, report the transaction hash.</pre>
+
+<div class="prompthead"><b>Agent prompt — delist / update price</b><button class="copybtn" data-copy="promptDelist">Copy</button></div>
+<pre id="promptDelist">You are my trading agent for the VANDA NFT collection on BNB Chain (BSC mainnet, chain ID 56).
+
+MARKETPLACE CONTRACT (PREDICTED address — verify on BscScan that contract code exists at this address before trading; if it has no code yet, STOP and tell me the contracts are not deployed):
+0x5b6D7F4D89262a025ffdBd518e37FEF37316dd28
+NFT CONTRACT (PREDICTED): 0x0C4E3e87eB1194706822Cc7074B4c229F1da0419
+
+I want to DELIST Accession Nº TOKEN_ID (or UPDATE its price to NEW_PRICE BNB — tell me which one you are doing).
+Before acting, you MUST call listing(TOKEN_ID) on the marketplace and report the exact results: seller, price, active. If it is not active, STOP. If the seller is not MY_WALLET, STOP — only the seller can delist or reprice.
+
+Then ask me to confirm. Only after confirmation, call delist(TOKEN_ID) to return the NFT from escrow to my wallet — or updatePrice(TOKEN_ID, NEW_PRICE_IN_WEI) to change the price (price must be greater than 0). After the transaction, report the transaction hash.</pre>
+</section>
+
+<section id="details">
+<p class="kicker">Details</p>
+<h2>Contracts &amp; facts</h2>
+<div class="contractcard">
+<div class="row"><span>Marketplace (escrow)</span><span><code>0x5b6D7F4D89262a025ffdBd518e37FEF37316dd28</code> (PREDICTED) · <a href="https://bscscan.com/address/0x5b6D7F4D89262a025ffdBd518e37FEF37316dd28" target="_blank" rel="noopener">BscScan</a></span></div>
+<div class="row"><span>VANDA NFT (BEP-721)</span><span><code>0x0C4E3e87eB1194706822Cc7074B4c229F1da0419</code> (PREDICTED) · <a href="https://bscscan.com/address/0x0C4E3e87eB1194706822Cc7074B4c229F1da0419" target="_blank" rel="noopener">BscScan</a></span></div>
+<div class="row"><span>$VANDA token</span><span><code>0xF4390D14A2B599833e19b135cE9aD3Ae5Db4AECe</code> (PREDICTED) · <a href="https://bscscan.com/address/0xF4390D14A2B599833e19b135cE9aD3Ae5Db4AECe" target="_blank" rel="noopener">BscScan</a></span></div>
+<div class="row"><span>Status</span><span>PREVIEW — not deployed yet. Addresses above are CREATE2 predictions (salt 0); verify code exists on BscScan before trading.</span></div>
+<div class="row"><span>Chain</span><span>BNB Smart Chain (56), BEP-721</span></div>
+<div class="row"><span>Supply</span><span>3,333 · sequential IDs 1–3,333</span></div>
+<div class="row"><span>Marketplace fee</span><span>0%</span></div>
+<div class="row"><span>Royalty</span><span>5% to 0x7379CA652f68fd1daAc11b7b87bb6B222fD129fa</span></div>
+<div class="row"><span>Owner</span><span><code>0x7379CA652f68fd1daAc11b7b87bb6B222fD129fa</code></span></div>
+</div>
+</section>
+
+<section>
+<p class="kicker">Share</p>
+<h2>Spread the bloom</h2>
+<div class="xlink"><b>Official X</b><a href="https://x.com/vanda_nft" target="_blank" rel="noopener">@vanda_nft</a><br><span style="color:var(--muted);font-size:13px">https://x.com/vanda_nft</span></div>
+<div class="cta-row" style="margin-top:16px"><a href="https://x.com/intent/tweet?text=VANDA%20Marketplace%20%E2%80%94%20trade%20the%20bloom%2C%200%25%20fee.%203%2C333%20orchids%20on%20BNB%20Chain.%20https%3A%2F%2Fvanda-five.vercel.app%2Fmarket.html%20%23VANDA%20%23NFT%20%23BNBChain" target="_blank" rel="noopener">Share on X</a><a class="ghost" href="index.html">VANDA home</a></div>
+</section>
+
+<p class="foot">VANDA — It blooms through stone. · <a href="https://vanda-five.vercel.app/">vanda-five.vercel.app</a> · <a href="https://x.com/vanda_nft" target="_blank" rel="noopener">@vanda_nft</a> · <a href="index.html">Mint page</a><br>NFTs are collectible items and do not promise any return.</p>
+
+<div class="dock"><span>Marketplace · 0% fee<small>seller 95% · royalty 5%</small></span><a href="index.html#mint">Mint</a></div>
+
+<script>
+const MARKET='0x5b6D7F4D89262a025ffdBd518e37FEF37316dd28'; // PREDICTED marketplace (CREATE2, salt 0)
+const CONTRACT='0x0C4E3e87eB1194706822Cc7074B4c229F1da0419'; // PREDICTED NFT
+const RPCS=['https://bsc-dataseed1.defibit.io/','https://bsc-dataseed.binance.org/','https://bsc-dataseed1.ninicoin.io/'];
+const S={listing:'0x84a184de'};
+const PREVIEW=true; // flip to false at deploy, after verifying code exists at MARKET on BscScan
+
+function fmtBnb(wei){
+  if(wei===0n)return '0 BNB';
+  const whole=wei/1000000000000000000n, frac=wei%1000000000000000000n;
+  let f=frac.toString().padStart(18,'0').replace(/0+$/,'');
+  return (whole.toString()+(f?'.'+f:''))+' BNB';
+}
+async function rpcCall(to,data){
+  for(const u of RPCS){
+    try{
+      const c=new AbortController();const t=setTimeout(()=>c.abort(),10000);
+      const r=await fetch(u,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({jsonrpc:'2.0',method:'eth_call',params:[{to:to,data:data},'latest'],id:1}),signal:c.signal});
+      clearTimeout(t);
+      const j=await r.json();
+      if(j&&j.result!==undefined&&j.result!=='0x')return j.result;
+    }catch(e){}
+  }
+  return null;
+}
+function encUint(n){return n.toString(16).padStart(64,'0');}
+function setText(id,txt){const el=document.getElementById(id);if(el)el.textContent=txt;}
+
+async function checkListing(){
+  const inp=document.getElementById('listingInput');
+  const res=document.getElementById('listingResult');
+  const v=inp?inp.value.trim():'';
+  const id=parseInt(v,10);
+  if(!/^\d+$/.test(v)||id<1||id>3333){if(res){res.className='result no';res.textContent='Enter an Accession number from 1 to 3,333.';}return;}
+  setText('lId','Nº '+String(id).padStart(3,'0'));
+  if(PREVIEW){
+    if(res){res.className='result';res.textContent='Marketplace not deployed yet — listing lookup will work after deploy.';}
+    setText('lSeller','— (preview)');setText('lPrice','— (preview)');setText('lActive','Not listed (preview)');
+    return;
+  }
+  if(res){res.className='result';res.textContent='Checking…';}
+  const hex=await rpcCall(MARKET,S.listing+encUint(id));
+  if(hex===null){if(res){res.className='result no';res.textContent='Could not reach the marketplace — try again in a moment.';}return;}
+  // listing(uint256) returns (seller address, price uint256, active bool)
+  const seller='0x'+hex.slice(26,66);
+  const price=BigInt('0x'+hex.slice(66,130));
+  const active=BigInt('0x'+hex.slice(130,194))!==0n;
+  setText('lSeller',seller);
+  setText('lPrice',fmtBnb(price));
+  setText('lActive',active?'LISTED':'Not listed');
+  if(res){
+    if(active){res.className='result yes';res.textContent='LISTED at '+fmtBnb(price)+' — seller '+seller.slice(0,6)+'…'+seller.slice(-4)+'.';}
+    else{res.className='result no';res.textContent='Not listed right now.';}
+  }
+}
+
+function copyPrompt(id){
+  const el=document.getElementById(id);
+  if(!el)return;
+  const txt=el.textContent;
+  function done(btn){if(btn){const o=btn.textContent;btn.textContent='Copied!';setTimeout(()=>{btn.textContent=o;},1500);}}
+  const btn=document.querySelector('[data-copy="'+id+'"]');
+  if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(txt).then(()=>done(btn)).catch(()=>fallbackCopy(txt,btn));}
+  else fallbackCopy(txt,btn);
+}
+function fallbackCopy(txt,btn){
+  const ta=document.createElement('textarea');ta.value=txt;document.body.appendChild(ta);ta.select();
+  try{document.execCommand('copy');done2(btn);}catch(e){alert('Copy failed — select the text manually.');}
+  document.body.removeChild(ta);
+  function done2(b){if(b){const o=b.textContent;b.textContent='Copied!';setTimeout(()=>{b.textContent=o;},1500);}}
+}
+
+function setNav(open){
+  const nav=document.getElementById('mainNav'), back=document.getElementById('navBack'), btn=document.getElementById('burger');
+  if(nav)nav.classList.toggle('open',open);
+  if(back)back.classList.toggle('open',open);
+  if(btn)btn.setAttribute('aria-expanded',open?'true':'false');
+}
+document.getElementById('burger').addEventListener('click',function(){setNav(!document.getElementById('mainNav').classList.contains('open'));});
+document.getElementById('navClose').addEventListener('click',function(){setNav(false);});
+document.getElementById('navBack').addEventListener('click',function(){setNav(false);});
+document.querySelectorAll('#mainNav a').forEach(function(a){a.addEventListener('click',function(){setNav(false);});});
+document.addEventListener('keydown',function(e){if(e.key==='Escape')setNav(false);});
+document.getElementById('listingBtn').addEventListener('click',checkListing);
+document.querySelectorAll('.copybtn').forEach(function(b){b.addEventListener('click',function(){copyPrompt(b.getAttribute('data-copy'));});});
+</script>
+</body>
+</html>

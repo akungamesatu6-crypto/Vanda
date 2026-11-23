@@ -1,7 +1,11 @@
 # VANDA — Locked Brief
 
-Confirmed by the user 2026-11-23 19:39 WIB. X deferred by the user
-2026-11-23 19:42 WIB ("Nanti saja akun x nya").
+Confirmed by the user 2026-11-23 19:39 WIB. X: user shared
+https://x.com/vanda_nft 2026-11-23 20:37 — @vanda_nft is the official
+handle (handle + link only; display name / bio / followers unverified).
+Presale confirmed 2026-11-23 20:33. Agent-only mint (no wallet button)
++ hamburger menu + bilingual roadmap + market.html ordered 2026-11-23
+20:38–20:40.
 
 ## Identity
 
@@ -12,7 +16,7 @@ Confirmed by the user 2026-11-23 19:39 WIB. X deferred by the user
 - **Language:** English only
 - **Chain:** BNB Smart Chain (BSC mainnet), BEP-721
 - **Canonical domain:** vanda-five.vercel.app (Vercel project "vanda")
-- **GitHub repo:** akungamesatu6-crypto/Vanda (does NOT exist yet)
+- **GitHub repo:** akungamesatu6-crypto/Vanda (created 2026-11-23)
 - **baseURI:** https://vanda-five.vercel.app/metadata/
 
 ## Inspiration (reference only — never copy)
@@ -40,8 +44,14 @@ collaboration with it.
 
 ## Economics
 
-- **Price ladder (per wallet, cumulative):** #1 FREE, #2 0.0005, #3 0.001,
-  #4 0.002, #5 0.003, #6 0.005 BNB. **Max 6/wallet. Max 0.0115 BNB/wallet.**
+- **Presale:** first 333 PAID mints cost a flat **0.0001 BNB**. The free
+  mint (#1/wallet) still runs during the presale; `presaleSold` counts
+  PAID mints only and the presale closes itself at 333 — no owner flip,
+  no allowlist. A batch straddling the 333 boundary mixes presale and
+  ladder prices.
+- **Price ladder (per wallet, cumulative, after the presale):** #1 FREE,
+  #2 0.0005, #3 0.001, #4 0.002, #5 0.003, #6 0.005 BNB. **Max 6/wallet.
+  Max 0.0115 BNB/wallet.**
 - **Gate:** ALL mints via SPACE ID Agent ID; free = any Agent ID holder,
   NO allowlist.
 - **Batch:** one `mint(uint256 qty)` transaction; cost = ladder sum of the
@@ -57,12 +67,14 @@ collaboration with it.
 ## Contracts (predicted — CREATE2, salt 0; tests 37/37)
 
 - VandaToken: 0xF4390D14A2B599833e19b135cE9aD3Ae5Db4AECe
-- VandaNFT: 0x30A57bba564bc35a326746Fbf13Ae3053A1fE2CE
-- VandaMarketplace: 0x4F35548ad12e873f1021B6f4999B4962eA986283
+- VandaNFT: 0x0C4E3e87eB1194706822Cc7074B4c229F1da0419 (NEW — old 0x30A5… VOID, presale build)
+- VandaMarketplace: 0x5b6D7F4D89262a025ffdBd518e37FEF37316dd28 (NEW — old 0x4F35… VOID)
 - SPACE ID Agent ID registry: 0x60B9262456dE011F7d15a54CdD8c48bAaa8B022F
 - Interim token owner at deploy: 0x05f63E20097c9360D9D68277b90b4a8A8cF8D7C1
-- Deploy order: token → NFT → market. Wiring: `setMinter(NFT)` once +
-  `transferOwnership(new wallet)`. Mint opens at deploy.
+- Deploy order: token → NFT → market, all from the paired wallet
+  0x05f63E20097c9360D9D68277b90b4a8A8cF8D7C1. Wiring: `setMinter(NFT)`
+  once + `transferOwnership(new wallet)`. Mint opens at deploy.
+  Est. deploy gas 4,094,151 ≈ 0.0002047 BNB @ 0.05 gwei.
 - Full record: `contracts/vanda_predictions.md`
 
 ## Artwork (done — Tania-generated, original)
@@ -79,18 +91,27 @@ collaboration with it.
   accent, purple orchid accents), mobile-first, EN only, UTC times.
 - **PREVIEW state:** zero-address placeholders, mint disabled, PREVIEW
   banner, planned numbers only. Flip at deploy.
-- Sections: hero, live status, how-it-works, swipe gallery, rarity + table,
-  Legendary feature, mint panel (qty 1–6, ladder-sum total, wallet flow,
-  Agent ID checker, agent prompt copy), token, marketplace, FAQ, contracts,
-  footer/share, sticky-header Mint button, fixed bottom dock.
+- Sections: hero, live status (incl. presale sold / presale state),
+  how-it-works, swipe gallery, rarity + table, Legendary feature,
+  ROADMAP (bilingual EN + ZH, 4 phases: Presale Opens / Public Mint /
+  Full Bloom / Beyond the Bloom — planned, no dates, no return promises),
+  mint panel (AGENT-ONLY: qty 1–6, presale-aware total, read-only wallet
+  lookup, Agent ID checker, presale-aware agent prompt copy — NO wallet
+  connect button, NO browser transaction code), token, marketplace
+  (links to market.html), FAQ, contracts, footer/share, sticky-header
+  Mint button, fixed bottom dock (both scroll to the mint panel only),
+  hamburger menu (Mint / How It Works / Gallery / Rarity / Roadmap /
+  Token / Marketplace / FAQ).
+- `market.html` — standalone marketplace page: escrow listing live,
+  list / buy / delist via agent prompts, read-only listing lookup,
+  NO wallet connect, EN only, PREVIEW (no fake listings).
 
 ## X / social
 
-- **DEFERRED by user order. Official X account: TBD — coming soon. No
-  handle exists.** Do NOT put the proposed handle anywhere (it was only a
-  proposal, never an official account). Do NOT invent any other handle. Page and docs mark X as TBD with no link
-  and no handle. Share-on-X links carry text only, never a handle. No other
-  social links anywhere.
+- **Official X: @vanda_nft — https://x.com/vanda_nft** (user-shared
+  2026-11-23 20:37). Handle + link ONLY on the page and in docs — do NOT
+  invent a display name, bio, or follower count. No other social links
+  anywhere.
 
 ## Standing rules applied
 
