@@ -88,7 +88,7 @@ pre{white-space:pre-wrap;word-break:break-word;background:#0A0F0B;border:1px sol
 </style>
 </head>
 <body>
-<div class="preview">PREVIEW — contracts not deployed yet · no listings · planned numbers only</div>
+<div class="preview">LIVE — marketplace is open · no listings yet</div>
 <header class="topbar"><button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="mainNav">&#9776;</button><b>VANDA</b><span class="tagline">It blooms through stone.</span><a class="mintlink" href="index.html#mint">Mint</a></header>
 <div class="navback" id="navBack"></div>
 <nav class="nav" id="mainNav" aria-label="Site menu">
@@ -116,13 +116,13 @@ pre{white-space:pre-wrap;word-break:break-word;background:#0A0F0B;border:1px sol
 <p class="kicker">Listings</p>
 <h2>On the market now</h2>
 <div class="status">
-<p class="big" id="liveStats">No listings yet (planned)</p>
-<p id="statNote" style="color:var(--orchid);margin:6px 0 0">PREVIEW — the marketplace contract is not deployed yet. There are no listings because nothing is listed, not because listings are hidden. Listings will appear here once the contracts deploy and holders list.</p>
+<p class="big" id="liveStats">No listings yet</p>
+<p id="statNote" style="color:var(--orchid);margin:6px 0 0">The marketplace contract is deployed. There are no listings because nothing is listed, not because listings are hidden. Listings will appear here once holders list.</p>
 <div class="statgrid">
 <div><b>Marketplace fee</b><span>0%</span></div>
 <div><b>Royalty</b><span>5%</span></div>
 <div><b>Seller receives</b><span>95%</span></div>
-<div><b>Status</b><span id="stOpen">PREVIEW</span></div>
+<div><b>Status</b><span id="stOpen">LIVE</span></div>
 </div>
 </div>
 <div class="empty" style="margin-top:14px"><b>No listings yet</b>Nothing is listed right now. Come back after the mint opens — or ask your agent to list a VANDA you own with the prompt below.</div>
@@ -160,9 +160,9 @@ pre{white-space:pre-wrap;word-break:break-word;background:#0A0F0B;border:1px sol
 <div class="prompthead"><b>Agent prompt — list a VANDA</b><button class="copybtn" data-copy="promptList">Copy</button></div>
 <pre id="promptList">You are my trading agent for the VANDA NFT collection on BNB Chain (BSC mainnet, chain ID 56).
 
-MARKETPLACE CONTRACT (PREDICTED address — verify on BscScan that contract code exists at this address before trading; if it has no code yet, STOP and tell me the contracts are not deployed):
+MARKETPLACE CONTRACT (DEPLOYED — verified on BscScan):
 0x5b6D7F4D89262a025ffdBd518e37FEF37316dd28
-NFT CONTRACT (PREDICTED): 0x0C4E3e87eB1194706822Cc7074B4c229F1da0419
+NFT CONTRACT (DEPLOYED): 0x0C4E3e87eB1194706822Cc7074B4c229F1da0419
 
 I want to LIST Accession Nº TOKEN_ID at PRICE BNB.
 Before listing, you MUST call these read-only functions and report the exact results:
@@ -177,9 +177,9 @@ The NFT moves into marketplace escrow until it sells or I delist it. After the t
 <div class="prompthead"><b>Agent prompt — buy a VANDA</b><button class="copybtn" data-copy="promptBuy">Copy</button></div>
 <pre id="promptBuy">You are my trading agent for the VANDA NFT collection on BNB Chain (BSC mainnet, chain ID 56).
 
-MARKETPLACE CONTRACT (PREDICTED address — verify on BscScan that contract code exists at this address before trading; if it has no code yet, STOP and tell me the contracts are not deployed):
+MARKETPLACE CONTRACT (DEPLOYED — verified on BscScan):
 0x5b6D7F4D89262a025ffdBd518e37FEF37316dd28
-NFT CONTRACT (PREDICTED): 0x0C4E3e87eB1194706822Cc7074B4c229F1da0419
+NFT CONTRACT (DEPLOYED): 0x0C4E3e87eB1194706822Cc7074B4c229F1da0419
 
 I want to BUY Accession Nº TOKEN_ID.
 Before buying, you MUST call listing(TOKEN_ID) on the marketplace and report the exact results: seller, price, active. If it is not active, STOP. The price is in BNB; on sale the seller receives 95% and a 5% royalty goes to the collection owner. Marketplace fee is 0%.
@@ -189,9 +189,9 @@ Then ask me to confirm the token ID and price. Only after confirmation, call buy
 <div class="prompthead"><b>Agent prompt — delist / update price</b><button class="copybtn" data-copy="promptDelist">Copy</button></div>
 <pre id="promptDelist">You are my trading agent for the VANDA NFT collection on BNB Chain (BSC mainnet, chain ID 56).
 
-MARKETPLACE CONTRACT (PREDICTED address — verify on BscScan that contract code exists at this address before trading; if it has no code yet, STOP and tell me the contracts are not deployed):
+MARKETPLACE CONTRACT (DEPLOYED — verified on BscScan):
 0x5b6D7F4D89262a025ffdBd518e37FEF37316dd28
-NFT CONTRACT (PREDICTED): 0x0C4E3e87eB1194706822Cc7074B4c229F1da0419
+NFT CONTRACT (DEPLOYED): 0x0C4E3e87eB1194706822Cc7074B4c229F1da0419
 
 I want to DELIST Accession Nº TOKEN_ID (or UPDATE its price to NEW_PRICE BNB — tell me which one you are doing).
 Before acting, you MUST call listing(TOKEN_ID) on the marketplace and report the exact results: seller, price, active. If it is not active, STOP. If the seller is not MY_WALLET, STOP — only the seller can delist or reprice.
@@ -203,10 +203,10 @@ Then ask me to confirm. Only after confirmation, call delist(TOKEN_ID) to return
 <p class="kicker">Details</p>
 <h2>Contracts &amp; facts</h2>
 <div class="contractcard">
-<div class="row"><span>Marketplace (escrow)</span><span><code>0x5b6D7F4D89262a025ffdBd518e37FEF37316dd28</code> (PREDICTED) · <a href="https://bscscan.com/address/0x5b6D7F4D89262a025ffdBd518e37FEF37316dd28" target="_blank" rel="noopener">BscScan</a></span></div>
-<div class="row"><span>VANDA NFT (BEP-721)</span><span><code>0x0C4E3e87eB1194706822Cc7074B4c229F1da0419</code> (PREDICTED) · <a href="https://bscscan.com/address/0x0C4E3e87eB1194706822Cc7074B4c229F1da0419" target="_blank" rel="noopener">BscScan</a></span></div>
-<div class="row"><span>$VANDA token</span><span><code>0xF4390D14A2B599833e19b135cE9aD3Ae5Db4AECe</code> (PREDICTED) · <a href="https://bscscan.com/address/0xF4390D14A2B599833e19b135cE9aD3Ae5Db4AECe" target="_blank" rel="noopener">BscScan</a></span></div>
-<div class="row"><span>Status</span><span>PREVIEW — not deployed yet. Addresses above are CREATE2 predictions (salt 0); verify code exists on BscScan before trading.</span></div>
+<div class="row"><span>Marketplace (escrow)</span><span><code>0x5b6D7F4D89262a025ffdBd518e37FEF37316dd28</code> · <a href="https://bscscan.com/address/0x5b6D7F4D89262a025ffdBd518e37FEF37316dd28" target="_blank" rel="noopener">BscScan</a></span></div>
+<div class="row"><span>VANDA NFT (BEP-721)</span><span><code>0x0C4E3e87eB1194706822Cc7074B4c229F1da0419</code> · <a href="https://bscscan.com/address/0x0C4E3e87eB1194706822Cc7074B4c229F1da0419" target="_blank" rel="noopener">BscScan</a></span></div>
+<div class="row"><span>$VANDA token</span><span><code>0xF4390D14A2B599833e19b135cE9aD3Ae5Db4AECe</code> · <a href="https://bscscan.com/address/0xF4390D14A2B599833e19b135cE9aD3Ae5Db4AECe" target="_blank" rel="noopener">BscScan</a></span></div>
+<div class="row"><span>Status</span><span>LIVE — deployed 23 Nov 2026. Trading is open.</span></div>
 <div class="row"><span>Chain</span><span>BNB Smart Chain (56), BEP-721</span></div>
 <div class="row"><span>Supply</span><span>3,333 · sequential IDs 1–3,333</span></div>
 <div class="row"><span>Marketplace fee</span><span>0%</span></div>
@@ -227,11 +227,11 @@ Then ask me to confirm. Only after confirmation, call delist(TOKEN_ID) to return
 <div class="dock"><span>Marketplace · 0% fee<small>seller 95% · royalty 5%</small></span><a href="index.html#mint">Mint</a></div>
 
 <script>
-const MARKET='0x5b6D7F4D89262a025ffdBd518e37FEF37316dd28'; // PREDICTED marketplace (CREATE2, salt 0)
-const CONTRACT='0x0C4E3e87eB1194706822Cc7074B4c229F1da0419'; // PREDICTED NFT
+const MARKET='0x5b6D7F4D89262a025ffdBd518e37FEF37316dd28'; // marketplace (CREATE2, salt 0 — deployed 23 Nov 2026)
+const CONTRACT='0x0C4E3e87eB1194706822Cc7074B4c229F1da0419'; // NFT (deployed 23 Nov 2026)
 const RPCS=['https://bsc-dataseed1.defibit.io/','https://bsc-dataseed.binance.org/','https://bsc-dataseed1.ninicoin.io/'];
 const S={listing:'0x84a184de'};
-const PREVIEW=true; // flip to false at deploy, after verifying code exists at MARKET on BscScan
+const PREVIEW=false; // deployed 23 Nov 2026 — verified on-chain
 
 function fmtBnb(wei){
   if(wei===0n)return '0 BNB';

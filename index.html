@@ -138,7 +138,7 @@ pre{white-space:pre-wrap;word-break:break-word;background:#0A0F0B;border:1px sol
 </style>
 </head>
 <body>
-<div class="preview">PREVIEW — contracts not deployed yet · mint disabled · planned numbers only</div>
+<div class="preview">LIVE — mint is open · first mint FREE · presale: first 333 paid mints 0.0001 BNB</div>
 <header class="topbar"><button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="mainNav">&#9776;</button><b>VANDA</b><span class="tagline">It blooms through stone.</span><a class="mintlink" href="#mint">Mint</a></header>
 <div class="navback" id="navBack"></div>
 <nav class="nav" id="mainNav" aria-label="Site menu">
@@ -218,12 +218,12 @@ pre{white-space:pre-wrap;word-break:break-word;background:#0A0F0B;border:1px sol
 <section id="roadmap">
 <p class="kicker">Roadmap</p>
 <h2>Four phases, in order</h2>
-<p class="lede">No dates are set — each phase begins when the previous one ends. Every phase below is planned and upcoming while the contracts are in PREVIEW.</p>
+<p class="lede">No dates are set — each phase begins when the previous one ends. Mint is live now; every phase below is planned and upcoming.</p>
 <div class="roadmap">
 <article><h3>Phase 1 — Presale Opens<span class="zh">第一阶段 — 预售开启</span></h3>
 <p>The mint opens with the presale: the first mint of every Agent ID wallet is free, and the first 333 paid mints cost a flat 0.0001 BNB. The presale closes itself at 333 — no owner action, no allowlist.</p>
 <p class="zh">铸造开启，预售同步开始：每个 Agent ID 钱包的首次铸造免费，前 333 次付费铸造统一 0.0001 BNB。达到 333 次后预售自动结束——无需人工操作，无白名单。</p>
-<span class="pill">Planned &middot; upcoming</span></article>
+<span class="pill">Live now</span></article>
 <article><h3>Phase 2 — Public Mint<span class="zh">第二阶段 — 公开铸造</span></h3>
 <p>After the presale, paid mints follow the per-wallet ladder — 0.0005, 0.001, 0.002, 0.003, 0.005 BNB — until all 3,333 Accession numbers are claimed. The free first mint stays open for every new Agent ID wallet.</p>
 <p class="zh">预售结束后，付费铸造按每钱包阶梯价进行——0.0005、0.001、0.002、0.003、0.005 BNB——直至 3,333 个编号全部铸造完毕。每个新的 Agent ID 钱包仍可免费首次铸造。</p>
@@ -244,9 +244,9 @@ pre{white-space:pre-wrap;word-break:break-word;background:#0A0F0B;border:1px sol
 <h2>Claim your accession</h2>
 <div class="ticket">
 <p class="big" id="mintHeadline">First mint FREE</p>
-<p id="liveStats2">Mint is in PREVIEW — contracts not deployed yet. Prices below are the planned ladder.</p>
+<p id="liveStats2">Mint is open — ask your agent to mint with the prompts below. Prices below are the live ladder + presale.</p>
 <p><b>Agent-only minting.</b> This page has no wallet button and never asks your browser to sign anything. Copy an agent prompt below, give it to your agent, and confirm there. Your mints are the next sequential Accession numbers — one transaction mints your whole batch and charges the exact on-chain price (<code>priceFor</code>), never price &times; quantity.</p>
-<div class="presale" style="margin-top:0"><b>Presale is live at mint open:</b> the first 333 paid mints cost a flat <b>0.0001 BNB</b> each — your first mint is still FREE. Presale sold: <b id="mintPresale">0 / 333 (planned)</b>. A batch that crosses the 333 boundary pays presale price for the mints before it and ladder price for the rest.</div>
+<div class="presale" style="margin-top:0"><b>Presale is live at mint open:</b> the first 333 paid mints cost a flat <b>0.0001 BNB</b> each — your first mint is still FREE. Presale sold: <b id="mintPresale">0 / 333</b>. A batch that crosses the 333 boundary pays presale price for the mints before it and ladder price for the rest.</div>
 <p>Quantity: <select id="qty"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option></select>
 <span id="qtyTotal" style="margin-left:8px;font-weight:700">Total: FREE</span></p>
 <p id="mintNote">Mint is not open yet — the contracts are not deployed. The prompts below are staged for deploy.</p>
@@ -274,7 +274,7 @@ pre{white-space:pre-wrap;word-break:break-word;background:#0A0F0B;border:1px sol
 <div class="prompthead"><b>Agent prompt — free mint</b><button class="copybtn" data-copy="promptFree">Copy</button></div>
 <pre id="promptFree">You are my minting agent for the VANDA NFT collection on BNB Chain (BSC mainnet, chain ID 56).
 
-NFT CONTRACT (PREDICTED address — verify on BscScan that contract code exists at this address before minting; if it has no code yet, STOP and tell me the contracts are not deployed):
+NFT CONTRACT (DEPLOYED — verified on BscScan):
 0x0C4E3e87eB1194706822Cc7074B4c229F1da0419
 
 COLLECTION: VANDA — 3,333 supply, BEP-721, SEQUENTIAL token IDs 1–3,333 in mint order ("Accession Nº 001–3,333")
@@ -294,9 +294,9 @@ Then ask me to confirm. Only after confirmation, call mint(1) and send exactly p
 <div class="prompthead"><b>Agent prompt — paid / batch mint</b><button class="copybtn" data-copy="promptPaid">Copy</button></div>
 <pre id="promptPaid">You are my minting agent for the VANDA NFT collection on BNB Chain (BSC mainnet, chain ID 56).
 
-NFT CONTRACT (PREDICTED address — verify on BscScan that contract code exists at this address before minting; if it has no code yet, STOP and tell me the contracts are not deployed):
+NFT CONTRACT (DEPLOYED — verified on BscScan):
 0x0C4E3e87eB1194706822Cc7074B4c229F1da0419
-TOKEN CONTRACT (PREDICTED): 0xF4390D14A2B599833e19b135cE9aD3Ae5Db4AECe ($VANDA)
+TOKEN CONTRACT (DEPLOYED): 0xF4390D14A2B599833e19b135cE9aD3Ae5Db4AECe ($VANDA)
 
 COLLECTION: VANDA — 3,333 supply, BEP-721, SEQUENTIAL token IDs 1–3,333 in mint order ("Accession Nº 001–3,333")
 PRESALE: the first 333 PAID mints cost a flat 0.0001 BNB. The free mint (a wallet's first mint) still runs during the presale. presaleSold counts PAID mints only; the presale closes itself at 333 — no owner flip, no allowlist. After the presale, paid mints return to the per-wallet ladder. A batch that straddles the 333 boundary pays presale price for the mints before it and ladder price for the rest.
@@ -326,11 +326,15 @@ Then ask me to confirm the quantity (1–6 minus what I already minted). Only af
 <summary style="cursor:pointer;min-height:44px;display:flex;align-items:center;font-weight:700;color:var(--acc)">Read the full skill on this page</summary>
 <pre id="skillText"># VANDA — Agent Mint Skill
 
-&gt; **PREVIEW — contracts NOT deployed yet.** The addresses below are CREATE2
-&gt; predictions, staged for deploy. Before minting, verify on BscScan that
-&gt; contract code exists at the NFT address. If it has no code, STOP — mint is
-&gt; not open yet. The page (`index.html`) is in PREVIEW state: zero-address
-&gt; placeholders, mint disabled, planned numbers only.
+&gt; **DEPLOYED 23 Nov 2026 — MINT IS OPEN.** The addresses below are the live
+&gt; contracts on BSC mainnet (CREATE2, salt 0). Token deploy tx
+&gt; `0x5ea8274d7815e7b6c2d18df43d949d70a622fcfbbacc29c080853e1f4a1ea987`
+&gt; (block 135286566); NFT deploy tx
+&gt; `0xf6b8617697d7989b4ad74943dc05d893b5668d4e37f854aed853df04fdc5ba96`
+&gt; (block 135286624); marketplace deploy tx
+&gt; `0x3d84db2d9d6dbaa1dc0929df1b5dbfea6ffe77420e40cf0854b849947b93f68c`
+&gt; (block 135286668). Total deploy cost 0.0003150 BNB (5 calls incl. wiring).
+&gt; The page (`index.html`) is LIVE: mint open, presale live.
 
 ## Collection
 
@@ -413,7 +417,7 @@ agent calls `mint()` / `mint(uint256)` directly after the user confirms.
 - **Royalty:** 5% to the owner on secondary sales.
 - **Marketplace:** own escrow, **0% fee** — seller receives 95%, royalty 5%.
 
-## Contracts (PREDICTED — CREATE2, salt 0, deploy order token → NFT → market)
+## Contracts (DEPLOYED 23 Nov 2026 — CREATE2, salt 0, deploy order token → NFT → market)
 
 | Contract | Predicted address |
 |---|---|
@@ -428,23 +432,21 @@ agent calls `mint()` / `mint(uint256)` directly after the user confirms.
 - Full prediction record: `contracts/vanda_predictions.md`
 - **Mint opens AT DEPLOY** (`mintOpen = true` in the constructor).
 
-## Deploy + wiring order (REQUIRED — paid minting reverts without it)
+## Deploy + wiring — DONE 23 Nov 2026
 
-Deploy from the paired wallet `0x05f63E20097c9360D9D68277b90b4a8A8cF8D7C1`.
-Est. total gas 4,094,151 ≈ 0.0002047 BNB @ 0.05 gwei.
+Deployed from the paired wallet `0x05f63E20097c9360D9D68277b90b4a8A8cF8D7C1`.
+Total cost 0.0003150 BNB (4,092,562 gas, 5 calls).
 
-1. Deploy `VandaToken` (owner at deploy = interim paired wallet).
-2. Deploy `VandaNFT`.
-3. Deploy `VandaMarketplace`.
-4. Interim token owner calls `setMinter(NFT)` on the token — **ONCE, never
-   again** (setMinter REPLACES the minter; a second call breaks bonus accrual).
-5. Interim token owner calls `transferOwnership(0x7379CA652f68fd1daAc11b7b87bb6B222fD129fa)`
-   on the token.
-6. Verify on BscScan: token owner = new wallet, `minter()` = NFT address,
+1. ✅ `VandaToken` — tx `0x5ea8274d7815e7b6c2d18df43d949d70a622fcfbbacc29c080853e1f4a1ea987`, block 135286566.
+2. ✅ `VandaNFT` — tx `0xf6b8617697d7989b4ad74943dc05d893b5668d4e37f854aed853df04fdc5ba96`, block 135286624.
+3. ✅ `VandaMarketplace` — tx `0x3d84db2d9d6dbaa1dc0929df1b5dbfea6ffe77420e40cf0854b849947b93f68c`, block 135286668.
+4. ✅ `setMinter(NFT)` on the token — tx `0x1c52728418155f2ba1705f28be400018f0bdece4d5740acdc572d4b8cb0235b8`, block 135286736. Called ONCE — never again (setMinter REPLACES the minter; a second call breaks bonus accrual).
+5. ✅ `transferOwnership(0x7379CA652f68fd1daAc11b7b87bb6B222fD129fa)` on the token — tx `0xed0067778d849e4bfacb7a79d3082fe869581aa7c8c76b2b58a4cb42517a820b`, block 135286784.
+6. ✅ Verified on-chain: token owner = new wallet, `minter()` = NFT address,
    token balance of new wallet = 1,000,000,000 VANDA, NFT owner = new wallet,
-   marketplace owner = new wallet, NFT `mintOpen` = true, `totalMinted` = 0.
-7. Flip the page: replace the zero-address placeholders with the deployed
-   addresses, remove the PREVIEW banner, re-verify the live page.
+   marketplace owner = new wallet, NFT `mintOpen` = true, `totalMinted` = 0,
+   `MAX_SUPPLY` = 3333, `presaleActive` = true, `presaleSold` = 0.
+7. ✅ Page flipped to LIVE (real addresses, PREVIEW banner removed, live reads on).
 
 ## Selectors (verified against compiled artifacts)
 
@@ -467,8 +469,7 @@ Est. total gas 4,094,151 ≈ 0.0002047 BNB @ 0.05 gwei.
 &gt; You are my minting agent for the VANDA NFT collection on BNB Chain (BSC
 &gt; mainnet, chain ID 56).
 &gt;
-&gt; NFT CONTRACT (PREDICTED — verify on BscScan that contract code exists
-&gt; before minting; if it has no code yet, STOP):
+&gt; NFT CONTRACT (DEPLOYED — verified on BscScan):
 &gt; `0x0C4E3e87eB1194706822Cc7074B4c229F1da0419`
 &gt;
 &gt; COLLECTION: VANDA — 3,333 supply, BEP-721, SEQUENTIAL token IDs 1–3,333
@@ -498,10 +499,9 @@ Est. total gas 4,094,151 ≈ 0.0002047 BNB @ 0.05 gwei.
 &gt; You are my minting agent for the VANDA NFT collection on BNB Chain (BSC
 &gt; mainnet, chain ID 56).
 &gt;
-&gt; NFT CONTRACT (PREDICTED — verify on BscScan that contract code exists
-&gt; before minting; if it has no code yet, STOP):
+&gt; NFT CONTRACT (DEPLOYED — verified on BscScan):
 &gt; `0x0C4E3e87eB1194706822Cc7074B4c229F1da0419`
-&gt; TOKEN CONTRACT (PREDICTED): `0xF4390D14A2B599833e19b135cE9aD3Ae5Db4AECe`
+&gt; TOKEN CONTRACT (DEPLOYED): `0xF4390D14A2B599833e19b135cE9aD3Ae5Db4AECe`
 &gt; ($VANDA)
 &gt;
 &gt; COLLECTION: VANDA — 3,333 supply, BEP-721, SEQUENTIAL token IDs 1–3,333
@@ -535,7 +535,7 @@ Est. total gas 4,094,151 ≈ 0.0002047 BNB @ 0.05 gwei.
 
 ## Marketplace agent prompts (`market.html`, agent-only, no wallet button)
 
-Marketplace `0x5b6D7F4D89262a025ffdBd518e37FEF37316dd28` (PREDICTED).
+Marketplace `0x5b6D7F4D89262a025ffdBd518e37FEF37316dd28` (DEPLOYED).
 Escrow model: `list()` moves the NFT into the marketplace; `delist()`
 returns it; `buy()` pays the exact listed price — seller 95%, royalty 5%,
 marketplace fee 0%. No floor price.
@@ -591,7 +591,7 @@ marketplace fee 0%. No floor price.
 <div><b>Fees</b><p>Marketplace fee: 0%. Royalty: 5% to the collection owner (0x7379CA652f68fd1daAc11b7b87bb6B222fD129fa). No other fees, ever.</p></div>
 </div>
 <div class="cta-row"><a href="market.html">Open the marketplace</a></div>
-<p style="color:var(--muted);font-size:14px;margin-top:14px">Marketplace contract (PREDICTED, not deployed yet): <code>0x5b6D7F4D89262a025ffdBd518e37FEF37316dd28</code>. Listing opens with the contracts. Trading here is agent-only too — see the marketplace page for the list / buy / delist prompts.</p>
+<p style="color:var(--muted);font-size:14px;margin-top:14px">Marketplace contract: <code>0x5b6D7F4D89262a025ffdBd518e37FEF37316dd28</code>. Listing is open. Trading here is agent-only too — see the marketplace page for the list / buy / delist prompts.</p>
 </section>
 
 <section class="journal" id="faq">
@@ -612,10 +612,10 @@ marketplace fee 0%. No floor price.
 <p class="kicker">Details</p>
 <h2>Contracts &amp; facts</h2>
 <div class="contractcard">
-<div class="row"><span>VANDA NFT (BEP-721)</span><span><code>0x0C4E3e87eB1194706822Cc7074B4c229F1da0419</code> (PREDICTED) · <a href="https://bscscan.com/address/0x0C4E3e87eB1194706822Cc7074B4c229F1da0419" target="_blank" rel="noopener">BscScan</a></span></div>
-<div class="row"><span>$VANDA token</span><span><code>0xF4390D14A2B599833e19b135cE9aD3Ae5Db4AECe</code> (PREDICTED) · <a href="https://bscscan.com/address/0xF4390D14A2B599833e19b135cE9aD3Ae5Db4AECe" target="_blank" rel="noopener">BscScan</a></span></div>
-<div class="row"><span>Marketplace (escrow)</span><span><code>0x5b6D7F4D89262a025ffdBd518e37FEF37316dd28</code> (PREDICTED) · <a href="https://bscscan.com/address/0x5b6D7F4D89262a025ffdBd518e37FEF37316dd28" target="_blank" rel="noopener">BscScan</a></span></div>
-<div class="row"><span>Status</span><span>PREVIEW — not deployed yet. Addresses above are CREATE2 predictions (salt 0); verify code exists on BscScan before minting.</span></div>
+<div class="row"><span>VANDA NFT (BEP-721)</span><span><code>0x0C4E3e87eB1194706822Cc7074B4c229F1da0419</code> · <a href="https://bscscan.com/address/0x0C4E3e87eB1194706822Cc7074B4c229F1da0419" target="_blank" rel="noopener">BscScan</a></span></div>
+<div class="row"><span>$VANDA token</span><span><code>0xF4390D14A2B599833e19b135cE9aD3Ae5Db4AECe</code> · <a href="https://bscscan.com/address/0xF4390D14A2B599833e19b135cE9aD3Ae5Db4AECe" target="_blank" rel="noopener">BscScan</a></span></div>
+<div class="row"><span>Marketplace (escrow)</span><span><code>0x5b6D7F4D89262a025ffdBd518e37FEF37316dd28</code> · <a href="https://bscscan.com/address/0x5b6D7F4D89262a025ffdBd518e37FEF37316dd28" target="_blank" rel="noopener">BscScan</a></span></div>
+<div class="row"><span>Status</span><span>LIVE — deployed 23 Nov 2026. Mint is open; presale live (first 333 paid mints 0.0001 BNB).</span></div>
 <div class="row"><span>Presale</span><span>First 333 paid mints at 0.0001 BNB flat; free mint #1 still runs; auto-closes at 333</span></div>
 <div class="row"><span>Deploy order</span><span>Token &rarr; NFT &rarr; marketplace, then setMinter(NFT) once + transferOwnership to the new wallet</span></div>
 <div class="row"><span>Chain</span><span>BNB Smart Chain (56), BEP-721</span></div>
@@ -640,16 +640,16 @@ marketplace fee 0%. No floor price.
 <div class="dock"><span id="dockPrice">First mint FREE<small>max 6/wallet · 3,333 supply</small></span><a href="#mint">Mint</a></div>
 
 <script>
-const CONTRACT='0x0C4E3e87eB1194706822Cc7074B4c229F1da0419'; // PREDICTED NFT address (CREATE2, salt 0)
-const TOKEN='0xF4390D14A2B599833e19b135cE9aD3Ae5Db4AECe';    // PREDICTED $VANDA token
-const MARKET='0x5b6D7F4D89262a025ffdBd518e37FEF37316dd28';  // PREDICTED marketplace
+const CONTRACT='0x0C4E3e87eB1194706822Cc7074B4c229F1da0419'; // NFT address (CREATE2, salt 0 — deployed 23 Nov 2026)
+const TOKEN='0xF4390D14A2B599833e19b135cE9aD3Ae5Db4AECe';    // $VANDA token (deployed 23 Nov 2026)
+const MARKET='0x5b6D7F4D89262a025ffdBd518e37FEF37316dd28';  // marketplace (deployed 23 Nov 2026)
 const REGISTRY='0x60B9262456dE011F7d15a54CdD8c48bAaa8B022F';
 const RPCS=['https://bsc-dataseed1.defibit.io/','https://bsc-dataseed.binance.org/','https://bsc-dataseed1.ninicoin.io/'];
 const MAXW=6, SUPPLY=3333, PRESALE_CAP=333;
 const PRESALE_PRICE=100000000000000n; // 0.0001 BNB in wei
 const LADDER=[0n,500000000000000n,1000000000000000n,2000000000000000n,3000000000000000n,5000000000000000n]; // wei: FREE, 0.0005, 0.001, 0.002, 0.003, 0.005 BNB
 const S={totalMinted:'0xa2309ff8',paidMinted:'0x2806b8fb',freeMinted:'0xd10a1a2b',mintOpen:'0x24bbd049',presaleSold:'0x48cebd67',presaleActive:'0x53135ca0',mintedOf:'0x617692dd',priceFor1:'0xf12a7add',priceForN:'0xd527979a',accruedOf:'0xea0c88b2',balanceOf:'0x70a08231'};
-const PREVIEW=true; // flip to false at deploy, after verifying code exists at CONTRACT on BscScan
+const PREVIEW=false; // deployed 23 Nov 2026 — verified on-chain
 let myMinted=0, lookupAddr=null;
 
 function plannedTotal(qty){

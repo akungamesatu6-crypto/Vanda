@@ -89,9 +89,8 @@ collaboration with it.
 
 - `index.html` — dark botanical-lab design (near-black green, neon-green
   accent, purple orchid accents), mobile-first, EN only, UTC times.
-- **PREVIEW state:** zero-address placeholders, mint disabled, PREVIEW
-  banner, planned numbers only. Flip at deploy.
-- Sections: hero, live status (incl. presale sold / presale state),
+- **LIVE state (since 23 Nov 2026):** real deployed addresses, mint open, presale live.
+- Sections: hero,
   how-it-works, swipe gallery, rarity + table, Legendary feature,
   ROADMAP (bilingual EN + ZH, 4 phases: Presale Opens / Public Mint /
   Full Bloom / Beyond the Bloom — planned, no dates, no return promises),
@@ -104,7 +103,7 @@ collaboration with it.
   Token / Marketplace / FAQ).
 - `market.html` — standalone marketplace page: escrow listing live,
   list / buy / delist via agent prompts, read-only listing lookup,
-  NO wallet connect, EN only, PREVIEW (no fake listings).
+  NO wallet connect, EN only, LIVE (no fake listings).
 
 ## X / social
 

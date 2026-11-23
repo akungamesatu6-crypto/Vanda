@@ -9,7 +9,7 @@ Agent ID holder. Max 6 per wallet.
 - Site: https://vanda-five.vercel.app/
 - Chain: BNB Smart Chain (BSC mainnet, chain ID 56), BEP-721
 - Language: English only (roadmap also in Chinese)
-- Status: PREVIEW — contracts not deployed yet
+- Status: LIVE — deployed 23 Nov 2026, mint open
 
 ## Spec
 

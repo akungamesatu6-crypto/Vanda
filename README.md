@@ -10,7 +10,7 @@ for any SPACE ID Agent ID holder, max 6 per wallet.
 - Chain: BNB Smart Chain (BSC mainnet, chain ID 56)
 - Standard: BEP-721, sequential token IDs 1–3,333
 - Language: English only
-- Status: **PREVIEW — contracts not deployed yet**
+- Status: **LIVE — deployed 23 Nov 2026, mint open**
 
 ## At a glance
 
@@ -40,9 +40,9 @@ IDs are sequential in mint order — the variety of a token follows its
 Accession number. The Legendary Miss Joaquim is the 1893 Singapore hybrid
 (Vanda hookeriana × Vanda teres), Singapore's national flower.
 
-## Contracts (PREDICTED — not deployed yet)
+## Contracts (DEPLOYED 23 Nov 2026)
 
-| Contract | Predicted address |
+| Contract | Address |
 |---|---|
 | VandaToken ($VANDA) | 0xF4390D14A2B599833e19b135cE9aD3Ae5Db4AECe |
 | VandaNFT (VANDA) | 0x0C4E3e87eB1194706822Cc7074B4c229F1da0419 |
@@ -73,8 +73,8 @@ Official X: **@vanda_nfth** — https://x.com/vanda_nfth (handle + link only).
 
 ## Files
 
-- `index.html` — mint page (PREVIEW state: predicted addresses, mint disabled; hamburger menu, bilingual roadmap, agent-only mint panel)
-- `market.html` — marketplace page (PREVIEW state: predicted addresses, no listings, agent-only list/buy/delist)
+- `index.html` — mint page (LIVE: real addresses, mint open; hamburger menu, bilingual roadmap, agent-only mint panel, Agent Skill section)
+- `market.html` — marketplace page (LIVE: real addresses, no listings yet, agent-only list/buy/delist)
 - `SKILL.md` — agent mint skill
 - `llms.txt` — machine-readable summary
 - `BRIEF.md` — locked project brief

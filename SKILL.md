@@ -1,10 +1,14 @@
 # VANDA — Agent Mint Skill
 
-> **PREVIEW — contracts NOT deployed yet.** The addresses below are CREATE2
-> predictions, staged for deploy. Before minting, verify on BscScan that
-> contract code exists at the NFT address. If it has no code, STOP — mint is
-> not open yet. The page (`index.html`) is in PREVIEW state: zero-address
-> placeholders, mint disabled, planned numbers only.
+> **DEPLOYED 23 Nov 2026 — MINT IS OPEN.** The addresses below are the live
+> contracts on BSC mainnet (CREATE2, salt 0). Token deploy tx
+> `0x5ea8274d7815e7b6c2d18df43d949d70a622fcfbbacc29c080853e1f4a1ea987`
+> (block 135286566); NFT deploy tx
+> `0xf6b8617697d7989b4ad74943dc05d893b5668d4e37f854aed853df04fdc5ba96`
+> (block 135286624); marketplace deploy tx
+> `0x3d84db2d9d6dbaa1dc0929df1b5dbfea6ffe77420e40cf0854b849947b93f68c`
+> (block 135286668). Total deploy cost 0.0003150 BNB (5 calls incl. wiring).
+> The page (`index.html`) is LIVE: mint open, presale live.
 
 ## Collection
 
@@ -87,7 +91,7 @@ agent calls `mint()` / `mint(uint256)` directly after the user confirms.
 - **Royalty:** 5% to the owner on secondary sales.
 - **Marketplace:** own escrow, **0% fee** — seller receives 95%, royalty 5%.
 
-## Contracts (PREDICTED — CREATE2, salt 0, deploy order token → NFT → market)
+## Contracts (DEPLOYED 23 Nov 2026 — CREATE2, salt 0, deploy order token → NFT → market)
 
 | Contract | Predicted address |
 |---|---|
@@ -102,23 +106,21 @@ agent calls `mint()` / `mint(uint256)` directly after the user confirms.
 - Full prediction record: `contracts/vanda_predictions.md`
 - **Mint opens AT DEPLOY** (`mintOpen = true` in the constructor).
 
-## Deploy + wiring order (REQUIRED — paid minting reverts without it)
+## Deploy + wiring — DONE 23 Nov 2026
 
-Deploy from the paired wallet `0x05f63E20097c9360D9D68277b90b4a8A8cF8D7C1`.
-Est. total gas 4,094,151 ≈ 0.0002047 BNB @ 0.05 gwei.
+Deployed from the paired wallet `0x05f63E20097c9360D9D68277b90b4a8A8cF8D7C1`.
+Total cost 0.0003150 BNB (4,092,562 gas, 5 calls).
 
-1. Deploy `VandaToken` (owner at deploy = interim paired wallet).
-2. Deploy `VandaNFT`.
-3. Deploy `VandaMarketplace`.
-4. Interim token owner calls `setMinter(NFT)` on the token — **ONCE, never
-   again** (setMinter REPLACES the minter; a second call breaks bonus accrual).
-5. Interim token owner calls `transferOwnership(0x7379CA652f68fd1daAc11b7b87bb6B222fD129fa)`
-   on the token.
-6. Verify on BscScan: token owner = new wallet, `minter()` = NFT address,
+1. ✅ `VandaToken` — tx `0x5ea8274d7815e7b6c2d18df43d949d70a622fcfbbacc29c080853e1f4a1ea987`, block 135286566.
+2. ✅ `VandaNFT` — tx `0xf6b8617697d7989b4ad74943dc05d893b5668d4e37f854aed853df04fdc5ba96`, block 135286624.
+3. ✅ `VandaMarketplace` — tx `0x3d84db2d9d6dbaa1dc0929df1b5dbfea6ffe77420e40cf0854b849947b93f68c`, block 135286668.
+4. ✅ `setMinter(NFT)` on the token — tx `0x1c52728418155f2ba1705f28be400018f0bdece4d5740acdc572d4b8cb0235b8`, block 135286736. Called ONCE — never again (setMinter REPLACES the minter; a second call breaks bonus accrual).
+5. ✅ `transferOwnership(0x7379CA652f68fd1daAc11b7b87bb6B222fD129fa)` on the token — tx `0xed0067778d849e4bfacb7a79d3082fe869581aa7c8c76b2b58a4cb42517a820b`, block 135286784.
+6. ✅ Verified on-chain: token owner = new wallet, `minter()` = NFT address,
    token balance of new wallet = 1,000,000,000 VANDA, NFT owner = new wallet,
-   marketplace owner = new wallet, NFT `mintOpen` = true, `totalMinted` = 0.
-7. Flip the page: replace the zero-address placeholders with the deployed
-   addresses, remove the PREVIEW banner, re-verify the live page.
+   marketplace owner = new wallet, NFT `mintOpen` = true, `totalMinted` = 0,
+   `MAX_SUPPLY` = 3333, `presaleActive` = true, `presaleSold` = 0.
+7. ✅ Page flipped to LIVE (real addresses, PREVIEW banner removed, live reads on).
 
 ## Selectors (verified against compiled artifacts)
 
@@ -141,8 +143,7 @@ Est. total gas 4,094,151 ≈ 0.0002047 BNB @ 0.05 gwei.
 > You are my minting agent for the VANDA NFT collection on BNB Chain (BSC
 > mainnet, chain ID 56).
 >
-> NFT CONTRACT (PREDICTED — verify on BscScan that contract code exists
-> before minting; if it has no code yet, STOP):
+> NFT CONTRACT (DEPLOYED — verified on BscScan):
 > `0x0C4E3e87eB1194706822Cc7074B4c229F1da0419`
 >
 > COLLECTION: VANDA — 3,333 supply, BEP-721, SEQUENTIAL token IDs 1–3,333
@@ -172,10 +173,9 @@ Est. total gas 4,094,151 ≈ 0.0002047 BNB @ 0.05 gwei.
 > You are my minting agent for the VANDA NFT collection on BNB Chain (BSC
 > mainnet, chain ID 56).
 >
-> NFT CONTRACT (PREDICTED — verify on BscScan that contract code exists
-> before minting; if it has no code yet, STOP):
+> NFT CONTRACT (DEPLOYED — verified on BscScan):
 > `0x0C4E3e87eB1194706822Cc7074B4c229F1da0419`
-> TOKEN CONTRACT (PREDICTED): `0xF4390D14A2B599833e19b135cE9aD3Ae5Db4AECe`
+> TOKEN CONTRACT (DEPLOYED): `0xF4390D14A2B599833e19b135cE9aD3Ae5Db4AECe`
 > ($VANDA)
 >
 > COLLECTION: VANDA — 3,333 supply, BEP-721, SEQUENTIAL token IDs 1–3,333
@@ -209,7 +209,7 @@ Est. total gas 4,094,151 ≈ 0.0002047 BNB @ 0.05 gwei.
 
 ## Marketplace agent prompts (`market.html`, agent-only, no wallet button)
 
-Marketplace `0x5b6D7F4D89262a025ffdBd518e37FEF37316dd28` (PREDICTED).
+Marketplace `0x5b6D7F4D89262a025ffdBd518e37FEF37316dd28` (DEPLOYED).
 Escrow model: `list()` moves the NFT into the marketplace; `delist()`
 returns it; `buy()` pays the exact listed price — seller 95%, royalty 5%,
 marketplace fee 0%. No floor price.
