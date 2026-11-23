@@ -1,0 +1,19 @@
+{
+  "name": "VANDA \u2014 Accession N\u00ba 2495",
+  "description": "Accession N\u00ba 2495 \u2014 a Vanda Rosea specimen from the VANDA collection: 3,333 orchids grown on BNB Smart Chain. It blooms through stone.",
+  "image": "https://vanda.vercel.app/assets/tier-uncommon.jpg",
+  "attributes": [
+    {
+      "trait_type": "Tier",
+      "value": "Uncommon"
+    },
+    {
+      "trait_type": "Variety",
+      "value": "Vanda Rosea"
+    },
+    {
+      "trait_type": "Accession",
+      "value": "2495"
+    }
+  ]
+}

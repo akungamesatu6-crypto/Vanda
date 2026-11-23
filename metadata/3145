@@ -1,0 +1,19 @@
+{
+  "name": "VANDA \u2014 Accession N\u00ba 3145",
+  "description": "Accession N\u00ba 3145 \u2014 a Vanda Aurea specimen from the VANDA collection: 3,333 orchids grown on BNB Smart Chain. It blooms through stone.",
+  "image": "https://vanda.vercel.app/assets/tier-epic.jpg",
+  "attributes": [
+    {
+      "trait_type": "Tier",
+      "value": "Epic"
+    },
+    {
+      "trait_type": "Variety",
+      "value": "Vanda Aurea"
+    },
+    {
+      "trait_type": "Accession",
+      "value": "3145"
+    }
+  ]
+}

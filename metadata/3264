@@ -1,0 +1,19 @@
+{
+  "name": "VANDA \u2014 Accession N\u00ba 3264",
+  "description": "Accession N\u00ba 3264 \u2014 a Miss Joaquim specimen from the VANDA collection: 3,333 orchids grown on BNB Smart Chain. It blooms through stone.",
+  "image": "https://vanda.vercel.app/assets/hero.jpg",
+  "attributes": [
+    {
+      "trait_type": "Tier",
+      "value": "Legendary"
+    },
+    {
+      "trait_type": "Variety",
+      "value": "Miss Joaquim"
+    },
+    {
+      "trait_type": "Accession",
+      "value": "3264"
+    }
+  ]
+}
