@@ -14,8 +14,8 @@
 - **Supply:** 3,333 — **SEQUENTIAL** token IDs 1–3,333, displayed as
   "Accession Nº 001–3,333". IDs are assigned in mint order; there is no
   random draw and no reveal.
-- **Language:** English only. **Canonical domain:** https://vanda.vercel.app/
-- **baseURI:** https://vanda.vercel.app/metadata/
+- **Language:** English only. **Canonical domain:** https://vanda-five.vercel.app/
+- **baseURI:** https://vanda-five.vercel.app/metadata/
 - **Owner / treasury / royalty receiver:**
   `0x7379CA652f68fd1daAc11b7b87bb6B222fD129fa`
 
@@ -68,8 +68,8 @@ mints of the collection.
 | Contract | Predicted address |
 |---|---|
 | VandaToken ($VANDA) | `0xF4390D14A2B599833e19b135cE9aD3Ae5Db4AECe` |
-| VandaNFT (VANDA) | `0x065dED8193DB6A39024273708cCC985bdAA4D7dB` |
-| VandaMarketplace | `0x60b1cE5820863e0F47a45Dc1d6CcAc3C357861BC` |
+| VandaNFT (VANDA) | `0x30A57bba564bc35a326746Fbf13Ae3053A1fE2CE` |
+| VandaMarketplace | `0x4F35548ad12e873f1021B6f4999B4962eA986283` |
 
 - **SPACE ID Agent ID registry (BSC mainnet):**
   `0x60B9262456dE011F7d15a54CdD8c48bAaa8B022F`
@@ -110,7 +110,7 @@ mints of the collection.
 >
 > NFT CONTRACT (PREDICTED — verify on BscScan that contract code exists
 > before minting; if it has no code yet, STOP):
-> `0x065dED8193DB6A39024273708cCC985bdAA4D7dB`
+> `0x30A57bba564bc35a326746Fbf13Ae3053A1fE2CE`
 >
 > COLLECTION: VANDA — 3,333 supply, BEP-721, SEQUENTIAL token IDs 1–3,333
 > ("Accession Nº 001–3,333"). PRICE LADDER (per wallet): #1 FREE, #2 0.0005,
@@ -137,7 +137,7 @@ mints of the collection.
 >
 > NFT CONTRACT (PREDICTED — verify on BscScan that contract code exists
 > before minting; if it has no code yet, STOP):
-> `0x065dED8193DB6A39024273708cCC985bdAA4D7dB`
+> `0x30A57bba564bc35a326746Fbf13Ae3053A1fE2CE`
 > TOKEN CONTRACT (PREDICTED): `0xF4390D14A2B599833e19b135cE9aD3Ae5Db4AECe`
 > ($VANDA)
 >

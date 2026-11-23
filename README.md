@@ -6,7 +6,7 @@ VANDA is a 3,333-piece NFT collection of orchid specimens on BNB Smart Chain
 (BEP-721). Five varieties, sequential Accession Nº 001–3,333, first mint FREE
 for any SPACE ID Agent ID holder, max 6 per wallet.
 
-- Site: https://vanda.vercel.app/
+- Site: https://vanda-five.vercel.app/
 - Chain: BNB Smart Chain (BSC mainnet, chain ID 56)
 - Standard: BEP-721, sequential token IDs 1–3,333
 - Language: English only
@@ -23,7 +23,7 @@ for any SPACE ID Agent ID holder, max 6 per wallet.
 | Token | $VANDA — 1B total (540M pool / 460M treasury), 120,000 per paid mint, max 600,000/wallet |
 | Royalty | 5% to the owner |
 | Marketplace | Own escrow, 0% fee (seller 95% / royalty 5%) |
-| baseURI | https://vanda.vercel.app/metadata/ |
+| baseURI | https://vanda-five.vercel.app/metadata/ |
 
 ## Rarity
 
@@ -44,8 +44,8 @@ Accession number. The Legendary Miss Joaquim is the 1893 Singapore hybrid
 | Contract | Predicted address |
 |---|---|
 | VandaToken ($VANDA) | 0xF4390D14A2B599833e19b135cE9aD3Ae5Db4AECe |
-| VandaNFT (VANDA) | 0x065dED8193DB6A39024273708cCC985bdAA4D7dB |
-| VandaMarketplace | 0x60b1cE5820863e0F47a45Dc1d6CcAc3C357861BC |
+| VandaNFT (VANDA) | 0x30A57bba564bc35a326746Fbf13Ae3053A1fE2CE |
+| VandaMarketplace | 0x4F35548ad12e873f1021B6f4999B4962eA986283 |
 
 Owner / treasury / royalty receiver:
 0x7379CA652f68fd1daAc11b7b87bb6B222fD129fa

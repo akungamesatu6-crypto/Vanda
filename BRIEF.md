@@ -11,9 +11,9 @@ Confirmed by the user 2026-11-23 19:39 WIB. X deferred by the user
 - **Tagline:** "It blooms through stone."
 - **Language:** English only
 - **Chain:** BNB Smart Chain (BSC mainnet), BEP-721
-- **Canonical domain:** vanda.vercel.app (Vercel project "vanda")
+- **Canonical domain:** vanda-five.vercel.app (Vercel project "vanda")
 - **GitHub repo:** akungamesatu6-crypto/Vanda (does NOT exist yet)
-- **baseURI:** https://vanda.vercel.app/metadata/
+- **baseURI:** https://vanda-five.vercel.app/metadata/
 
 ## Inspiration (reference only — never copy)
 
@@ -57,8 +57,8 @@ collaboration with it.
 ## Contracts (predicted — CREATE2, salt 0; tests 37/37)
 
 - VandaToken: 0xF4390D14A2B599833e19b135cE9aD3Ae5Db4AECe
-- VandaNFT: 0x065dED8193DB6A39024273708cCC985bdAA4D7dB
-- VandaMarketplace: 0x60b1cE5820863e0F47a45Dc1d6CcAc3C357861BC
+- VandaNFT: 0x30A57bba564bc35a326746Fbf13Ae3053A1fE2CE
+- VandaMarketplace: 0x4F35548ad12e873f1021B6f4999B4962eA986283
 - SPACE ID Agent ID registry: 0x60B9262456dE011F7d15a54CdD8c48bAaa8B022F
 - Interim token owner at deploy: 0x05f63E20097c9360D9D68277b90b4a8A8cF8D7C1
 - Deploy order: token → NFT → market. Wiring: `setMinter(NFT)` once +
