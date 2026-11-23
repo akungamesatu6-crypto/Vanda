@@ -233,7 +233,6 @@ marketplace fee 0%. No floor price.
 ## Honesty rules
 
 - VANDA is an independent project on BNB Chain, NOT a Binance collaboration.
-- NFTs are collectible items and do not promise any return.
 - Never invent a minted count, deadline, collaboration, or testimonial.
 - Token IDs are sequential in mint order — say so plainly; there is no
   random draw.

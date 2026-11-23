@@ -84,5 +84,5 @@ Official X: **@vanda_nfth** — https://x.com/vanda_nfth (handle + link only).
 
 ## Disclaimer
 
-NFTs are collectible items and do not promise any return. VANDA is an
+VANDA is an
 independent project on BNB Chain, not a Binance collaboration.

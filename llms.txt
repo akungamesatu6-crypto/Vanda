@@ -49,5 +49,5 @@ Agent ID holder. Max 6 per wallet.
 
 ## Disclaimer
 
-NFTs are collectible items and do not promise any return. VANDA is an
+VANDA is an
 independent project on BNB Chain, not a Binance collaboration.
